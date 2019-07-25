@@ -2,10 +2,8 @@ numpy
 scipy
 matplotlib
 pandas
-re
 nltk
 gensim
 spacy
 pyLDAvis
 pystan
-
