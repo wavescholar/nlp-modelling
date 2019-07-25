@@ -1,5 +1,5 @@
 import pandas as pd
-import pytma #<---------This is where we're going to put functionalized code
+import pytma  # <---------This is where we're going to put functionalized code
 import re
 import nltk
 import gensim
@@ -14,9 +14,10 @@ import pyLDAvis.gensim as gensimvis
 import os.path as op
 import pickle
 
-#Get the nltk data we need
-datasets =['stopwords','punkt','averaged_perceptron_tagger','wordnet']
+# Get the nltk data we need
+datasets = ['stopwords', 'punkt', 'averaged_perceptron_tagger', 'wordnet']
 pytma.nltk_init(datasets)
+
 
 def get_transcription_data():
     """
@@ -33,17 +34,18 @@ def get_transcription_data():
     file_name = data_path + "/mtsamples.csv"
     medical_df = pd.read_csv(file_name)
     medical_df = medical_df.dropna(axis=0, how='any')
-    return  medical_df
+    return medical_df
 
-#Get the medical transcription data set
+
+# Get the medical transcription data set
 medical_df = get_transcription_data()
-
 
 # run this to initialize the pre-possessing tools
 token = RegexpTokenizer(r'[a-zA-Z]+')  # not sure if numbers affect results
 stop_words = set(stopwords.words("english"))
 skip_words = re.compile('with|without|also|dr|ms|mrs|mr|miss')
 skip_x = re.compile(r'\b([Xx]*)\b')
+
 
 # Stemming and Lemmatization :
 # The goal of both stemming and lemmatization is to reduce inflectional forms and
@@ -63,24 +65,29 @@ def get_nltk_POS(word):
 
     return pos_dict.get(tag, wordnet.NOUN)
 
+
 def lemmatize_nltk_with_POS(text):
     lemmatizer = WordNetLemmatizer()
     result = [lemmatizer.lemmatize(w, get_nltk_POS(w)) for w in nltk.word_tokenize(text)]
     return result
 
+
 word_tokens = token.tokenize(medical_df["transcription"][0])
 stopword_processed = [w for w in word_tokens if not w in stop_words]
 lemmatized_nltk = lemmatize_nltk_with_POS(" ".join(stopword_processed))
 
+
 def lemmatize_spacy(text):
     nlp = spacy.load('en', disable=['parser', 'ner'])
-    result= nlp(text)
+    result = nlp(text)
     return result
+
 
 lemmatized_spacey = lemmatize_spacy(medical_df["transcription"][0])
 
 print(medical_df["transcription"][0])
 print(" ".join([token.lemma_ for token in lemmatized_spacey]))
+
 
 # Applying the pre-processing to entire transcription
 def preprocess(text):
@@ -92,6 +99,7 @@ def preprocess(text):
     stopword_processed = [w for w in to_lower if not w.lower() in stop_words and len(w) > 1]
     lemmatized = [lemmatizer.lemmatize(w, get_nltk_POS(w)) for w in stopword_processed]
     return lemmatized
+
 
 processed = medical_df["transcription"].map(preprocess)
 
@@ -110,7 +118,7 @@ dictionary.filter_extremes(no_below=15, no_above=0.5, keep_n=100000)
 bow_corpus = [dictionary.doc2bow(doc) for doc in processed]
 
 md_tfidf = gensim.models.TfidfModel(bow_corpus)
-#Transform the whole corpus via TfIdf and index it, in preparation for similarity queries:
+# Transform the whole corpus via TfIdf and index it, in preparation for similarity queries:
 index = gensim.similarities.SparseMatrixSimilarity(md_tfidf[bow_corpus], num_features=12)
 
 corpus_md_tfidf = md_tfidf[bow_corpus]
@@ -138,6 +146,7 @@ count_lower.plot(kind='bar', x='word', figsize=(15, 15))
 count_higher.plot(kind='bar', x='word', figsize=(15, 15))
 print(y_min, y_max)
 
+
 # Running LDA
 def lda_to_dict(model, num_topics, num_words):
     word_dict = {}
@@ -146,12 +155,13 @@ def lda_to_dict(model, num_topics, num_words):
         word_dict['Topic # ' + '{:02d}'.format(i + 1)] = [i[0] for i in words]
     return word_dict
 
+
 topics = 15
 words = 20
 
 lda_model = gensim.models.LdaMulticore(corpus_md_tfidf, num_topics=topics, id2word=dictionary, passes=2, workers=4)
 
-lsi_model =gensim.models.LsiModel(corpus_md_tfidf, num_topics=topics, id2word=dictionary)
+lsi_model = gensim.models.LsiModel(corpus_md_tfidf, num_topics=topics, id2word=dictionary)
 
 print("LDA Model:")
 
@@ -169,11 +179,9 @@ for idx in range(topics):
 
 print("=" * 20)
 
-pickle_out = open("lda_model_15.pkl","wb")
+pickle_out = open("lda_model_15.pkl", "wb")
 pickle.dump(lda_model, pickle_out)
 pickle_out.close()
 
-
 lda_vis = gensimvis.prepare(lda_model, bow_corpus, dictionary)
 pyLDAvis.display(lda_vis)
-
