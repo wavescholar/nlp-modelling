@@ -1,5 +1,6 @@
 import os
 import sys
+
 __all__ = ["get_transcription_data"]
 
 
@@ -21,11 +22,11 @@ def get_transcription_data():
         medical_df : pandas data frame with transcription data.
         -------
         """
-    names=dir(__all__)
+    names = dir(__all__)
     things = dir(sys.modules[__name__])
     path = os.getcwd()
     data_path = os.path.join(pytma.__path__[0], 'data')
     file_name = data_path + "/mtsamples.csv"
     medical_df = pd.read_csv(file_name)
     medical_df = medical_df.dropna(axis=0, how='any')
-    return  medical_df
+    return medical_df

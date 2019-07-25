@@ -1,11 +1,12 @@
-#from __future__ import absolute_import, division, print_function
+# from __future__ import absolute_import, division, print_function
 import nltk
 import numpy as np
 import pandas as pd
 import scipy.optimize as opt
 from scipy.special import erf
 
-__all__ = ["nltk_init","Model", "Fit", "opt_err_func", "transform_data", "cumgauss"]
+__all__ = ["nltk_init", "Model", "Fit", "opt_err_func", "transform_data", "cumgauss"]
+
 
 def nltk_init(datasets):
     """
@@ -141,6 +142,7 @@ def opt_err_func(params, x, y, func):
 
 class Model(object):
     """Class for fitting cumulative Gaussian functions to data"""
+
     def __init__(self, func=cumgauss):
         """ Initialize a model object.
 
@@ -182,6 +184,7 @@ class Fit(object):
     """
     Class for representing a fit of a model to data
     """
+
     def __init__(self, model, params):
         """
         Initialize a :class:`Fit` object.
