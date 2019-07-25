@@ -5,7 +5,32 @@ import pandas as pd
 import scipy.optimize as opt
 from scipy.special import erf
 
-__all__ = ["nltk_init", "Model", "Fit", "opt_err_func", "transform_data", "cumgauss"]
+__all__ = ["get_transcription_data", "nltk_init", "Model", "Fit", "opt_err_func", "transform_data", "cumgauss"]
+
+
+def get_transcription_data():
+    """
+        Function that returns medical transcription data
+        This data was scraped from mtsamples.com
+        data schema
+            - description: Short description of transcription
+            - medical_specialty: Medical specialty classification of transcription
+            - sample_name: Transcription title
+            - transcription: Sample medical transcriptions
+            - keywords: Relevant keywords from transcription
+
+        Parameters
+        ----------
+
+        Returns
+        medical_df : pandas data frame with transcription data.
+        -------
+        """
+    data_path = os.path.join(pytma.__path__[0], 'data')
+    file_name = data_path + "/mtsamples.csv"
+    medical_df = pd.read_csv(file_name)
+    medical_df = medical_df.dropna(axis=0, how='any')
+    return medical_df
 
 
 def nltk_init(datasets):
