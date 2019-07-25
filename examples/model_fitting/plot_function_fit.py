@@ -24,10 +24,10 @@ plt.style.use('ggplot')
 # ------------
 #
 # First, we'll load some data into pytma.
-data_path = op.join(sb.__path__[0], 'data')
+data_path = op.join(pytma.__path__[0], 'data')
 
-ortho_x, ortho_y, ortho_n = sb.transform_data(op.join(data_path, 'ortho.csv'))
-para_x, para_y, para_n = sb.transform_data(op.join(data_path, 'para.csv'))
+ortho_x, ortho_y, ortho_n = pytma.transform_data(op.join(data_path, 'ortho.csv'))
+para_x, para_y, para_n = pytma.transform_data(op.join(data_path, 'para.csv'))
 
 ###############################################################################
 # Fitting a model
@@ -38,7 +38,7 @@ para_x, para_y, para_n = sb.transform_data(op.join(data_path, 'para.csv'))
 # input data.
 
 # Instantiate our model and fit it on two datasets
-model = sb.Model()
+model = pytma.Model()
 ortho_fit = model.fit(ortho_x, ortho_y)
 para_fit = model.fit(para_x, para_y)
 

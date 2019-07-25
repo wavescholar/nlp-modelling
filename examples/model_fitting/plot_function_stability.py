@@ -51,7 +51,7 @@ for ii, n_level in enumerate(noise_levels):
         x_boot = x[ixs_boot]
         y_boot = y[ixs_boot]
         # Fit the model and return the coefs
-        model = sb.Model(error_func)
+        model = pytma.Model(error_func)
         fit = model.fit(x_boot, y_boot, (.5,))
         coefs[ii, jj] = fit.params[0]
 
