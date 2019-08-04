@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/topic-modelling.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/topic-modelling.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/get_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/pytma.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/pytma.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/LDAWorkflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/LDAWorkflow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/_static/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/doc/_static/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/doc/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-dev.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,6 +117,11 @@
       <workItem from="1563815309789" duration="14916000" />
       <workItem from="1564062680258" duration="83000" />
       <workItem from="1564092462747" duration="324000" />
+      <workItem from="1564250407094" duration="1036000" />
+      <workItem from="1564505516182" duration="138000" />
+      <workItem from="1564525739042" duration="11000" />
+      <workItem from="1564862737344" duration="1009000" />
+      <workItem from="1564863838798" duration="2513000" />
     </task>
     <servers />
   </component>
@@ -128,7 +133,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -161,6 +168,11 @@
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
           <line>165</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/doc/sphinxext/github.py</url>
+          <line>148</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
