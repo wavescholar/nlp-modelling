@@ -42,8 +42,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.mathjax',
               'math_dollar',  # has to go before numpydoc
               'numpydoc',
-              'sphinx_gallery.gen_gallery',
-              'edx_theme']
+              'sphinx_gallery.gen_gallery']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
