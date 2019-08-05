@@ -25,7 +25,9 @@ script:
 - mkdir for_test
 - cd for_test
 - py.test --pyargs pytma --cov-report term-missing --cov=pytma
-- sphinx-build -nWT -b dummy . _build/html
+#- sphinx-build -nWT -b dummy . _build/html
+- cd doc
+- make html
 
 after_success:
 - coveralls
