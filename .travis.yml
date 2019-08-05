@@ -16,6 +16,7 @@ python:
 
 install:
 - travis_retry pip install sphinx
+- travis_retry pip install sphinx_gallery
 - travis_retry pip install sphinx_rtd_theme
 - travis_retry pip install -r requirements-dev.txt
 - travis_retry pip install -r requirements.txt

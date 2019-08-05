@@ -4,3 +4,6 @@ pytest-cov
 flake8
 Sphinx
 numpydoc
+sphinx_gallery
+sphinx_rtd_theme
+
