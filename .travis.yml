@@ -8,13 +8,14 @@ deploy:
     secure: $PYPI_PASSWORD
   on:
     tags: true
-    repo: brucebcampbell/sigpy-toolbox
+    repo: brucebcampbell/nlp_modelling
 
 
 python:
   - '3.6'
 
 install:
+- travis_retry pip install sphinx
 - travis_retry pip install -r requirements-dev.txt
 - travis_retry pip install -r requirements.txt
 - travis_retry pip install -e .
@@ -24,6 +25,7 @@ script:
 - mkdir for_test
 - cd for_test
 - py.test --pyargs pytma --cov-report term-missing --cov=pytma
+- sphinx-build -nWT -b dummy . _build/html
 
 after_success:
 - coveralls
