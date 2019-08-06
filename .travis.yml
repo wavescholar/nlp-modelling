@@ -8,7 +8,7 @@ deploy:
     secure: $PYPI_PASSWORD
   on:
     tags: true
-    repo: brucebcampbell/nlp_modelling
+    repo: brucebcampbell/nlp-modelling
 
 
 python:
