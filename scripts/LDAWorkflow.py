@@ -18,27 +18,7 @@ import pickle
 datasets = ['stopwords', 'punkt', 'averaged_perceptron_tagger', 'wordnet']
 pytma.nltk_init(datasets)
 
-
-def get_transcription_data():
-    """
-        Function that returns medical transcription data
-
-        Parameters
-        ----------
-
-        Returns
-        medical_df : pandas data frame with transcription data.
-        -------
-        """
-    data_path = op.join(pytma.__path__[0], 'data')
-    file_name = data_path + "/mtsamples.csv"
-    medical_df = pd.read_csv(file_name)
-    medical_df = medical_df.dropna(axis=0, how='any')
-    return medical_df
-
-
-# Get the medical transcription data set
-medical_df = get_transcription_data()
+medical_df = pytma.get_transcription_data()
 
 # run this to initialize the pre-possessing tools
 token = RegexpTokenizer(r'[a-zA-Z]+')  # not sure if numbers affect results

@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/sg_tutorial/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/sg_tutorial/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/sg_tutorial/plot_sg_tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/sg_tutorial/plot_sg_tutorial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/pytma.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/pytma.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/LDAWorkflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/LDAWorkflow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +36,9 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -122,6 +128,7 @@
       <workItem from="1565102426590" duration="9000" />
       <workItem from="1565102441177" duration="744000" />
       <workItem from="1565105550996" duration="14000" />
+      <workItem from="1565105797133" duration="3186000" />
     </task>
     <servers />
   </component>
@@ -146,27 +153,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>186</line>
+          <line>166</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>161</line>
+          <line>141</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>40</line>
+          <line>20</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>163</line>
+          <line>143</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>165</line>
+          <line>145</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -190,6 +197,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1565107982591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/topic_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1563843963292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
   </component>
   <component name="debuggerHistoryManager">
