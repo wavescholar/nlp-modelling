@@ -31,6 +31,7 @@ script:
 - cd /home/travis/build/brucebcampbell/nlp-modelling/doc
 - make html
 - touch _build/html/.nojekyll
+codecov
 
 deploy:
   provider: pages
@@ -43,3 +44,6 @@ deploy:
 
 after_success:
 - coveralls
+
+notifications:
+  slack: aloidiasolutions:wK07bxfNlwQ5Biau7Brvh9O1
