@@ -81,7 +81,15 @@ def preprocess(text):
     return lemmatized
 
 
-processed = medical_df["transcription"].map(preprocess)
+do_process = False
+if do_process:
+    processed = medical_df["transcription"].map(preprocess)
+    pickle_processed = open("preprocesed.pkl", "wb")
+    pickle.dump(processed, pickle_processed)
+    pickle_processed.close()
+else:
+    processed = pickle.load("preprocesed.pkl",'rb')
+
 
 dictionary = gensim.corpora.Dictionary(processed)  # dictionary gives unique ids to the words for easier processing
 print(type(dictionary))
@@ -159,9 +167,9 @@ for idx in range(topics):
 
 print("=" * 20)
 
-pickle_out = open("lda_model_15.pkl", "wb")
-pickle.dump(lda_model, pickle_out)
-pickle_out.close()
+pickle_lda = open("lda_model_15.pkl", "wb")
+pickle.dump(lda_model, pickle_lda)
+pickle_lda.close()
 
 lda_vis = gensimvis.prepare(lda_model, bow_corpus, dictionary)
 pyLDAvis.display(lda_vis)

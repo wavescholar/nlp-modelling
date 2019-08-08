@@ -7,8 +7,12 @@ Welcome to pytma's documentation!
 
 We rely on excellent Python libraries nltk, spacy, and gensim for pre-processing and model fitting.
 
-To see how to use it, please refer to the `README file 
+To see how to use it, please refer to the `README file
 <https://github.com/brucebcampbell/nlp-modelling/blob/master/README.md>`_ in the Github repository.
+
+This is the general workflow for using the library. 
+
+.. image:: _static/NLP-TextAnalysis.png
 
 Contents:
 
