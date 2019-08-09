@@ -1,7 +1,0 @@
-[run]
-branch = True
-source = pytma/*
-include = pytma/*
-omit = */setup.py
-[report]
-include = pytma/*
