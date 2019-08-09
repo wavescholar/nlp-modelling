@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.coveragerc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Tokenization.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Tokenization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Parse.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +181,7 @@
       <workItem from="1565105550996" duration="14000" />
       <workItem from="1565105797133" duration="8644000" />
       <workItem from="1565186175883" duration="11362000" />
-      <workItem from="1565275403548" duration="4695000" />
+      <workItem from="1565275403548" duration="8049000" />
     </task>
     <servers />
   </component>
