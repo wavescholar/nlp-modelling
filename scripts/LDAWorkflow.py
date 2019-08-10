@@ -26,16 +26,6 @@ stop_words = set(stopwords.words("english"))
 skip_words = re.compile('with|without|also|dr|ms|mrs|mr|miss')
 skip_x = re.compile(r'\b([Xx]*)\b')
 
-
-# Stemming and Lemmatization :
-# The goal of both stemming and lemmatization is to reduce inflectional forms and
-# sometimes derivationally related forms of a word to a common base form.
-# Stemming usually refers to a crude heuristic process that chops off the ends of words
-# in the hope of achieving this goal correctly most of the time, and often includes
-# the removal of derivational affixes.  Lemmatization usually refers to doing things properly
-# with the use of a vocabulary and morphological analysis of words,
-# normally aiming to remove inflectional endings only and to return the
-# base or dictionary form of a word, which is known as the lemma
 def get_nltk_POS(word):
     tag = nltk.pos_tag([word])[0][1][0].upper()
     pos_dict = {"J": wordnet.ADJ,
@@ -44,7 +34,6 @@ def get_nltk_POS(word):
                 "R": wordnet.ADV}
 
     return pos_dict.get(tag, wordnet.NOUN)
-
 
 def lemmatize_nltk_with_POS(text):
     lemmatizer = WordNetLemmatizer()

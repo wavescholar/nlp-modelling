@@ -13,6 +13,14 @@ Classes
 
    Model
 
+.. currentmodule:: Tokenization
+
+.. autosummary::
+   :template: class.rst
+   :toctree: gen_api
+
+   Tokenizer
+
 
 Functions
 ---------

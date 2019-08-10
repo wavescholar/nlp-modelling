@@ -8,28 +8,86 @@ test_text = """Hello Mr. Smith, how are you doing today? The weather is great, a
 The sky is pinkish-blue. You shouldn't eat cardboard"""
 
 class Tokenizer:
+    """Class for tokenization of text"""
+
     def __init__(self, text):
+        """ Initialize a Tokenizer object.
+
+        Parameters
+        ----------
+        text : string
+            text to be tokenized
+
+        """
         self.text = text
 
     def to_sentences(self):
+        """
+        Tokenize to sentences
+
+        Parameters
+        ----------
+        self.text : string
+            the text the object was initialized with
+
+        Returns
+        -------
+        tokenized_text : list
+            list of strings corresponding to sentences.
+        """
         tokenized_text = sent_tokenize(self.text)
         return (tokenized_text)
 
     def to_words(self):
+        """
+        Tokenize to words
+
+        Parameters
+        ----------
+        self.text : string
+            the text the object was initialized with
+
+        Returns
+        -------
+        tokenized_text : list
+            list of strings corresponding to words.
+        """
+
         tokenized_word = word_tokenize(self.text)
         return (tokenized_word)
 
     def freqs(self):
+        """
+        Calculate word frequencies in text
+
+        Parameters
+        ----------
+        self.text : string
+            the text the object was initialized with
+
+        Returns
+        -------
+        fdist : dictionary
+            word counts
+        """
         fdist = FreqDist(word_tokenize(self.text))
         return (fdist)
 
     # Frequency Distribution Plot
     def plot_freqs(self):
-        fdist = self.freqs(self)
+        """
+        Plot word frequencies
+
+        Parameters
+        ----------
+        self.text : string
+            the text the object was initialized with
+        """
+
+        fdist = self.freqs()
         fdist.plot(30, cumulative=True)
         plt.title("Cumulative Word Counts")
         plt.show()
-
 
 if __name__ == '__main__':
     #This will be the unit test

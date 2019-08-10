@@ -23,25 +23,14 @@ running -> run
 
 5. Lemmatization
 
-Lemmatization is related to stemming, differing in that lemmatization is able to capture canonical forms based on a word's lemma.
-
-For example, stemming the word "better" would fail to return its citation form (another word for lemma); however, lemmatization would result in the following:
-
+Lemmatization is related to stemming, differing in that lemmatization is able to capture canonical forms based on a word's lemma.For example, stemming the word "better" would fail to return its citation form (another word for lemma); however, lemmatization would result in the following:
 better -> good
-
-It should be easy to see why the implementation of a stemmer would be the less difficult feat of the two.
-
-
-
-
+It should be easy to see why the implementation of a stemmer would be the less difficult feat of the two. The goal of both stemming and lemmatization is to reduce inflectional forms and sometimes derivationally related forms of a word to a common base form. Stemming usually refers to a crude heuristic process that chops off the ends of words in the hope of achieving this goal correctly most of the time, and often includes the removal of derivational affixes.  Lemmatization usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma
 
 .. math::
-
     \int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}
 
-
 And refer to a paper [author2019]_.
-
 
 .. [author2019] first a., second a., cheese b. (2019). The title of their 
                 paper. Journal of papers, *15*: 1023-1049.
