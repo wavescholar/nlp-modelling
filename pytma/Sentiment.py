@@ -70,3 +70,13 @@ if __name__ == '__main__':
     sent.valenceSentiment(test_text_unsupervised)
 
     print("done")
+
+    # # Get the movie sentiment data and implement in test
+    # X_train, X_test, y_train, y_test = train_test_split(text_tf, data['Sentiment'], test_size=0.3, random_state=123)
+    # from sklearn.naive_bayes import MultinomialNB
+    # from sklearn import metrics
+    #
+    # # Model Generation Using Multinomial Naive Bayes
+    # clf = MultinomialNB().fit(X_train, y_train)
+    # predicted = clf.predict(X_test)
+    # print("MultinomialNB Accuracy:", metrics.accuracy_score(y_test, predicted))
