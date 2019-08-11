@@ -4,7 +4,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet
-
+from nltk.stem.porter import PorterStemmer
 
 class Lemmatize:
     """Lematizer class:  Wordnet or spacy"""
@@ -59,6 +59,15 @@ class Lemmatize:
         result = self.spaceynlp(text)
         return result
 
+    def porter_stemmer(self,text):
+        stem = PorterStemmer()
+        split_text =test_text.split()
+        stemmed_words=list()
+        for word in split_text:
+            stemmed =stem.stem(word)
+            stemmed_words.append(stemmed)
+        stemmed_text = " ".join(stemmed_words)
+        return stemmed_text
 
 if __name__ == '__main__':
     # This will be the unit test
@@ -74,4 +83,7 @@ if __name__ == '__main__':
     print(result)
 
     result = lem.lemmatize_spacy(test_text)
+    print(result)
+
+    result = lem.porter_stemmer(test_text)
     print(result)
