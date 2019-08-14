@@ -1,3 +1,4 @@
+import nltk
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import RegexpTokenizer
 import matplotlib.pyplot as plt
@@ -55,6 +56,20 @@ class Tokenizer:
 
         tokenized_word = word_tokenize(self.text)
         return (tokenized_word)
+
+    @staticmethod
+    def regexTokenize(text):
+        token = nltk.RegexpTokenizer(r'[a-zA-Z]+')
+        if isinstance(text, str):
+            word_tokens = token.tokenize(text)
+
+        elif all(isinstance(item, str) for item in text):
+            str_text = " ".join(text)
+            word_tokens = token.tokenize(str_text)
+        else:
+            raise TypeError
+
+        return word_tokens
 
     def freqs(self):
         """

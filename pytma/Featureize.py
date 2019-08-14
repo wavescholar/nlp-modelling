@@ -32,6 +32,32 @@ class Featurize():
         text_counts = cv.fit_transform(self.text.split())
         return text_counts
 
+    def wtv_spacy(self):
+        import numpy as np
+        import spacy
+        nlp = spacy.load("en")
+        text_tokens = nlp(self.text)
+        text_vectors = np.vstack([word.vector for word in text_tokens if word.has_vector])
+        return text_vectors
+
+    def pca_wv(self,vecs):
+        import matplotlib.pyplot as plt
+        from sklearn.decomposition import PCA
+        import numpy as np
+
+        pca = PCA(n_components=2)
+        text_vecs_transformed = pca.fit_transform(vecs)
+        text_vecs_transformed = np.c_[self.text.split(), text_vecs_transformed]
+
+        x=text_vecs_transformed[:, 1]
+        y=text_vecs_transformed[:, 2]
+        x = [float(i) for i in x]
+        y = [float(i) for i in y ]
+
+        plt.scatter(x, y)
+        plt.xticks(x, rotation='vertical')
+        plt.show()
+
 
 if __name__ == '__main__':
     # This will be the unit test
