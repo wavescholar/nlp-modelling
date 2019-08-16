@@ -1,5 +1,5 @@
 import nltk
-
+from nltk.corpus import wordnet
 #
 # Universal Part-of-Speech Tagset
 #
@@ -17,11 +17,15 @@ import nltk
 # .	punctuation marks	. , ; !
 # X	other	ersatz, esprit, dunno, gr8, univeristy
 
-def get_nltk_POS(word):
-    tag = nltk.pos_tag([word])[0][1][0].upper()
-    pos_dict = {"J": wordnet.ADJ,
-                "N": wordnet.NOUN,
-                "V": wordnet.VERB,
-                "R": wordnet.ADV}
-    return pos_dict.get(tag, wordnet.NOUN)
+class POStag:
+    def __init__(self):
+        print("init POSTag")
+
+    def get_nltk_POS(word):
+        tag = nltk.pos_tag([word])[0][1][0].upper()
+        pos_dict = {"J": wordnet.ADJ,
+                    "N": wordnet.NOUN,
+                    "V": wordnet.VERB,
+                    "R": wordnet.ADV}
+        return pos_dict.get(tag, wordnet.NOUN)
 

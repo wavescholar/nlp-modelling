@@ -77,7 +77,7 @@ if do_process:
     pickle.dump(processed, pickle_processed)
     pickle_processed.close()
 else:
-    processed = pickle.load("preprocesed.pkl",'rb')
+    processed = pickle.load("preprocesed.pkl")
 
 
 dictionary = gensim.corpora.Dictionary(processed)  # dictionary gives unique ids to the words for easier processing
