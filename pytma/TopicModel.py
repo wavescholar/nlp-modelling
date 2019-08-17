@@ -8,6 +8,13 @@ from nltk.tokenize import RegexpTokenizer
 import matplotlib.pyplot as plt
 import pickle
 
+#from __future__ import print_function
+#from time import time
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.decomposition import NMF
+
+from sklearn.datasets import fetch_20newsgroups
+
 from numpy import array
 
 
@@ -143,15 +150,42 @@ class LDAAnalysis:
         plt.legend(("coherence_values"), loc='best')
         plt.show()
 
+class NNMFTopicAnalysis:
+    def __init__(self, docs,num_samples=400,num_features=1000,num_topics=10,top_words=20):
+        self.samples = num_samples
+        self.num_features = num_features
+        self.num_topics = num_topics
+        self.top_words = top_words
+        self.docs= docs
+
+    def fit(self):
+        vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, max_features=self.num_features, stop_words='english')
+        tfidf = vectorizer.fit_transform(self.docs[:self.samples])
+
+        nmf = NMF(n_components=self.num_topics, random_state=1).fit(tfidf)
+
+        feature_names = vectorizer.get_feature_names()
+
+        for topic_idx, topic in enumerate(nmf.components_):
+            print("Topic #%d:" % topic_idx)
+            print(" ".join([feature_names[i]
+                            for i in topic.argsort()[:-self.top_words - 1:-1]]))
+            print()
+
 if __name__ == '__main__':
     # This will be the unit test
 
     medical_df = pytma.get_transcription_data()
 
-    p_df = medical_df
-    # Convert to array
     docs = array(medical_df['keywords'])
 
+    # =============================
+    # NNMF
+    nnmf = NNMFTopicAnalysis(docs=docs)
+    nnmf.fit()
+
+    # =============================
+    # LDA
     lda = LDAAnalysis(docs)
 
     do_process = True
@@ -164,3 +198,5 @@ if __name__ == '__main__':
         LDAAnalysis = pickle.load("LDAAnalysis.pkl")
 
     lda.coherence_values()
+
+

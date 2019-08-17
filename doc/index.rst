@@ -22,3 +22,29 @@ Contents:
    theory
    auto_examples/index
    api
+
+pytma main
+===================
+.. automodule:: scripts.LDAWorkflow
+   :members:
+
+pytma Featureize
+=====================
+.. automodule:: pytma.Featurize
+   :members:
+
+pytma Lemmatize
+=================
+.. automodule:: pytma.Lemmatize
+   :members:
+
+pytma Parse
+===================
+.. automodule:: pytma.Parse
+   :members:
+
+pytma POSTag
+===================
+.. automodule:: pytma.POSTag
+   :members:
+
