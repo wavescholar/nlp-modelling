@@ -287,3 +287,27 @@ texinfo_domain_indices = False
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
+
+numpydoc_show_class_members = False
+
+
+def add_to_path():
+
+    partial_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../')
+    workspace_path = os.path.abspath(partial_path)
+    assert os.path.exists(workspace_path)
+
+    projects = []
+
+    for current, dirs, c in os.walk(str(workspace_path)):
+        for dir in dirs:
+
+            project_path = os.path.join(workspace_path, dir, 'src')
+
+            if os.path.exists(project_path):
+                projects.append(project_path)
+
+    for project_str in projects:
+        sys.path.append(project_str)
+
+add_to_path()

@@ -3,7 +3,6 @@ from nltk.tokenize import RegexpTokenizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 
-
 class Featurize():
     """
     Class for featurizing text.  BOW, tf-idf, vector embeddings
@@ -71,11 +70,13 @@ if __name__ == '__main__':
     feat = Featurize(test_text)
 
     text_tf = feat.tf()
+
     print(text_tf)
 
     print(len(test_text.split()))
+
     print(len(set(test_text.split())))
 
-
     text_tf_idf = feat.tf_idf()
+
     print(text_tf_idf)

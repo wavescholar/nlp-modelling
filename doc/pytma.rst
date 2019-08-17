@@ -7,7 +7,7 @@ Subpackages
 .. toctree::
 
    pytma.tests
-
+   
 Submodules
 ----------
 

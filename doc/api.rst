@@ -12,6 +12,9 @@ Classes
    :toctree: gen_api
 
    Model
+   Featurize
+   Sentiment
+   Tokenizer
 
 Functions
 ---------
@@ -20,6 +23,7 @@ Functions
    :template: function.rst
    :toctree: gen_api
 
+   get_transcription_data
    transform_data
    cumgauss
    opt_err_func
