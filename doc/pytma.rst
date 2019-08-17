@@ -11,7 +11,7 @@ Subpackages
 Submodules
 ----------
 
-pytma.Featureize module
+pytma.Featurize module
 -----------------------
 
 .. automodule:: pytma.Featureize

@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Featurize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Featurize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/pytma.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/pytma.rst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +186,7 @@
       <workItem from="1565447410004" duration="29218000" />
       <workItem from="1565881693811" duration="2579000" />
       <workItem from="1565966868912" duration="11759000" />
-      <workItem from="1566006815607" duration="3409000" />
+      <workItem from="1566006815607" duration="3979000" />
     </task>
     <servers />
   </component>
