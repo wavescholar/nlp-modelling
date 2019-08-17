@@ -31,7 +31,7 @@ script:
 - cd /home/travis/build/brucebcampbell/nlp-modelling/doc
 - make html
 - touch _build/html/.nojekyll
-- codecov
+
 
 deploy:
   provider: pages
