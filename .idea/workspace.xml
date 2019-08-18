@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Predict.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytma/TopicModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/TopicModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/LDAWorkflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/LDAWorkflow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +187,7 @@
       <workItem from="1565447410004" duration="29218000" />
       <workItem from="1565881693811" duration="2579000" />
       <workItem from="1565966868912" duration="11759000" />
-      <workItem from="1566006815607" duration="7740000" />
+      <workItem from="1566006815607" duration="9253000" />
     </task>
     <servers />
   </component>
@@ -268,17 +267,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
-          <line>145</line>
+          <line>146</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
-          <line>139</line>
+          <line>140</line>
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
-          <line>150</line>
+          <line>151</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -293,7 +292,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
-          <line>184</line>
+          <line>185</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>

@@ -137,6 +137,7 @@ class LDAAnalysis:
             print(coherencemodel.get_coherence())
             coherence_values.append(coherencemodel.get_coherence())
 
+
         return model_list, coherence_values
 
     def coherence_values(self, limit=40, step=6, start=2):
