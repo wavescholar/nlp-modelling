@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 
 ##Text Classification Model using TF-IDF.
 #First, import the MultinomialNB module and create a Multinomial Naive Bayes classifier object using MultinomialNB() function.
@@ -159,8 +161,7 @@ if __name__ == '__main__':
     print()
 
     if opts.select_chi2:
-        print("Extracting %d best features by a chi-squared test" %
-              opts.select_chi2)
+        print("Extracting %d best features by a chi-squared test" % opts.select_chi2)
         t0 = time()
         ch2 = SelectKBest(chi2, k=opts.select_chi2)
         X_train = ch2.fit_transform(X_train, y_train)

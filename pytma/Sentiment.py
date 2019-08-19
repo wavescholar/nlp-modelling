@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
@@ -47,6 +49,7 @@ class Sentiment:
 
 if __name__ == '__main__':
     #This will be the unit test
+
 
     test_text_supervised = [("Great place to be when you are in Bangalore.", "pos"),
                             ("The place was being renovated when I visited so the seating was limited.", "neg"),

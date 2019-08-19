@@ -1,22 +1,16 @@
+# -*- coding: utf-8 -*-
+
 import pytma
 from gensim.models.coherencemodel import CoherenceModel
 from gensim.models.ldamodel import LdaModel
-
 from gensim.corpora.dictionary import Dictionary
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize import RegexpTokenizer
 import matplotlib.pyplot as plt
 import pickle
-
-#from __future__ import print_function
-#from time import time
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
-
-from sklearn.datasets import fetch_20newsgroups
-
 from numpy import array
-
 
 class LDAAnalysis:
     def __init__(self, docs, num_topics=5, chunksize=500, passes=20, iterations=400, eval_every=1):

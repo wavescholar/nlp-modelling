@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk.tokenize import RegexpTokenizer
 from sklearn.feature_extraction.text import TfidfVectorizer

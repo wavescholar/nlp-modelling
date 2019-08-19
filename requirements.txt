@@ -8,3 +8,4 @@ gensim
 spacy
 pyLDAvis
 pystan
+wget

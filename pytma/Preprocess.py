@@ -1,89 +1,14 @@
-# from __future__ import absolute_import, division, print_function
+# -*- coding: utf-8 -*-
+
 import nltk
 import numpy as np
 import pandas as pd
 import scipy.optimize as opt
 from scipy.special import erf
 import os
-__all__ = ["get_transcription_data", "nltk_init", "Model", "Fit", "opt_err_func", "transform_data", "cumgauss"]
+__all__ = [ "Model", "Fit", "opt_err_func", "transform_data", "cumgauss"]
 
-def get_transcription_data():
-    """
-        Function that returns medical transcription data
-        This data was scraped from mtsamples.com
-        data schema
-            - description: Short description of transcription
-            - medical_specialty: Medical specialty classification of transcription
-            - sample_name: Transcription title
-            - transcription: Sample medical transcriptions
-            - keywords: Relevant keywords from transcription
-
-        Parameters
-        ----------
-
-        Returns
-        medical_df : pandas data frame with transcription data.
-        -------
-        """
-    data_path = os.path.join(os.path.dirname(__file__), 'data')
-    file_name = data_path + "/mtsamples.csv"
-    medical_df = pd.read_csv(file_name)
-    medical_df = medical_df.dropna(axis=0, how='any')
-    return medical_df
-
-
-def nltk_init(datasets):
-    """
-    Function that initializes NLTK data sets
-
-    Parameters
-    ----------
-    sets : list of data sets to get.
-        ['stopwords','punkt','averaged_perceptron_tagger','wordnet']
-
-    Returns
-    -------
-    """
-    for set in datasets:
-        try:
-            nltk.download(set)
-        except:
-            print("nltk.download fail on " + set)
-            raise
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#==========Example code ===================
 
 def transform_data(data):
     """

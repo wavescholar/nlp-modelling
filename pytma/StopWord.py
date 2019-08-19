@@ -1,17 +1,10 @@
+# -*- coding: utf-8 -*-
+
 from sklearn.feature_extraction import stop_words
 from nltk.corpus import stopwords
 import spacy
 from enum import Enum
 import nltk
-
-
-# [NQY18]	J. Nothman, H. Qin and R. Yurchak (2018).
-# “Stop Word Lists in Free Open-source Software Packages”. In Proc. Workshop for NLP Open Source Software.
-
-# stop words are words which are filtered out before or after processing of natural language data (text).
-# Though "stop words" usually refers to the most common words in a language, there is no single universal
-# list of stop words used by all natural language processing tools, and indeed not all tools even use such
-# a list. Some tools specifically avoid removing these stop words to support phrase search.
 
 class StopWord:
     class SwLibEnum(Enum):
@@ -50,7 +43,6 @@ class StopWord:
         stopword_processed = [w for w in to_lower if not w.lower() in stop_words and len(w) > 1]
 
         return stopword_processed
-
 
 if __name__ == '__main__':
 

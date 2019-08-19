@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import spacy
 from spacy import displacy
 from nltk.parse import RecursiveDescentParser

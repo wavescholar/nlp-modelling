@@ -1,4 +1,5 @@
-#import absolute_import, division, print_function
+# -*- coding: utf-8 -*-
+
 import os.path
 
 # Format expected by setup.py and doc/source/conf.py: string of form "X.Y.Z"

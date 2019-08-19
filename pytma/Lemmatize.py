@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import nltk
 import spacy
 from nltk.stem import WordNetLemmatizer

@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 import nltk
 from nltk.corpus import wordnet
 #

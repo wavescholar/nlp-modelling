@@ -1,13 +1,10 @@
+# -*- coding: utf-8 -*-
+
 import nltk
 from nltk.tokenize import sent_tokenize
-from nltk.tokenize import RegexpTokenizer
 import matplotlib.pyplot as plt
 from nltk.probability import FreqDist
 from nltk.tokenize import word_tokenize
-
-test_text = """Hello Mr. Smith, how are you doing today? The weather is great, and city is awesome.
-The sky is pinkish-blue. You shouldn't eat cardboard"""
-
 
 class Tokenizer:
     """Class for tokenization of text"""
@@ -106,7 +103,11 @@ class Tokenizer:
         plt.show()
 
 if __name__ == '__main__':
+
     # This will be the unit test
+
+    test_text = """Hello Mr. Smith, how are you doing today? The weather is great, and city is awesome.
+    The sky is pinkish-blue. You shouldn't eat cardboard"""
 
     t = Tokenizer(test_text)
     print(t.to_words())
