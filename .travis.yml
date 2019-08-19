@@ -28,7 +28,7 @@ script:
 - cd for_test
 - py.test --pyargs pytma --cov-report term-missing --cov=pytma
 #- sphinx-build -nWT -b dummy . _build/html
-- cd /home/travis/build/brucebcampbell/nlp-modelling/doc
+- cd $TRAVIS_BUILD_DIR/doc
 - make clean
 - make html
 - touch _build/html/.nojekyll
