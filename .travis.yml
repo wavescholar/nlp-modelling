@@ -33,7 +33,6 @@ script:
 - make html
 - touch _build/html/.nojekyll
 
-
 deploy:
   provider: pages
   skip_cleanup: true
@@ -44,7 +43,7 @@ deploy:
     branch: master
 
 after_success:
-- coveralls
+- codecov
 
 notifications:
   slack: aloidiasolutions:wK07bxfNlwQ5Biau7Brvh9O1
