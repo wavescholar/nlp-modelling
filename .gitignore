@@ -1,6 +1,8 @@
 *.py[co]
 *~
 *.DS_Store
-_build/
-auto_examples/
-gen_api/
+doc/_build/
+doc/auto_examples/
+doc/gen_api/
+.idea/
+*.log

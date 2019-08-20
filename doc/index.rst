@@ -3,15 +3,16 @@
 Welcome to pytma's documentation!
 ====================================
 
-`pytma` is a template for a small scientific Python project. 
+`pytma` is a library for NLP modelling in Python.
 
-To see how to use it, please refer to the `README file 
-<https://github.com/uwescience/pytma/blob/master/README.md>`_ in the Github repository.
+We rely on excellent Python libraries nltk, spacy, and gensim for pre-processing and model fitting.
 
-This is an example of documentation of the software, using sphinx_. 
+To see how to use it, please refer to the `README file
+<https://github.com/brucebcampbell/nlp-modelling/blob/master/README.md>`_ in the Github repository.
 
-.. _sphinx: http://sphinx-doc.org/
+This is the general workflow for using the library. 
 
+.. image:: _static/NLP-TextAnalysis.png
 
 Contents:
 
@@ -21,3 +22,29 @@ Contents:
    theory
    auto_examples/index
    api
+
+pytma main
+===================
+.. automodule:: scripts.LDAWorkflow
+   :members:
+
+pytma Featureize
+=====================
+.. automodule:: pytma.Featurize
+   :members:
+
+pytma Lemmatize
+=================
+.. automodule:: pytma.Lemmatize
+   :members:
+
+pytma Parse
+===================
+.. automodule:: pytma.Parse
+   :members:
+
+pytma POSTag
+===================
+.. automodule:: pytma.POSTag
+   :members:
+

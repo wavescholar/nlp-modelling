@@ -1,5 +1,11 @@
 ## pytma
-[![Build Status](https://travis-ci.org/uwescience/pytma.svg?branch=master)](https://travis-ci.org/uwescience/pytma)
+[![Build Status](https://travis-ci.com/brucebcampbell/nlp-modelling.svg?branch=master)](https://travis-ci.com/brucebcampbell/nlp-modelling.svg?branch=master)
+
+[![codecov](https://codecov.io/gh/brucebcampbell/nlp-modelling/branch/master/graph/badge.svg)](https://codecov.io/gh/brucebcampbell/nlp-modelling)
+
+[![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
+
+
 
 nlp-modelling is a Python project that demonstrating a variety of NLP modelling tasks. There are a number of workflows that call into modules for topic modelling and document classification.
 

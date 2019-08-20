@@ -8,13 +8,16 @@ deploy:
     secure: $PYPI_PASSWORD
   on:
     tags: true
-    repo: brucebcampbell/sigpy-toolbox
+    repo: brucebcampbell/nlp-modelling
 
 
 python:
   - '3.6'
 
 install:
+- travis_retry pip install sphinx
+- travis_retry pip install sphinx_gallery
+- travis_retry pip install sphinx_rtd_theme
 - travis_retry pip install -r requirements-dev.txt
 - travis_retry pip install -r requirements.txt
 - travis_retry pip install -e .
@@ -24,6 +27,24 @@ script:
 - mkdir for_test
 - cd for_test
 - py.test --pyargs pytma --cov-report term-missing --cov=pytma
+#- sphinx-build -nWT -b dummy . _build/html
+- cd $TRAVIS_BUILD_DIR/doc
+- make clean
+- make html
+- touch _build/html/.nojekyll
+
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  local_dir: "doc/_build/html"
+  keep_history: true
+  on:
+    branch: master
 
 after_success:
 - coveralls
+
+notifications:
+  slack: aloidiasolutions:wK07bxfNlwQ5Biau7Brvh9O1
