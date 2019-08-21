@@ -46,6 +46,23 @@ class Logger:
         consoleHandler.setFormatter(logFormatter)
         rootLogger.addHandler(consoleHandler)
 
+        logging.getLogger().setLevel(logging.INFO)
+
+    def setLogLevel(self, level):
+        """
+        Set the global log level
+        logging.****
+        :param level:
+        CRITICAL = 50
+        ERROR = 40
+        WARNING = 30
+        INFO = 20
+        DEBUG = 10
+        NOTSET = 0
+
+:return:
+        """
+
     # DEBUG :Detailed information, typically of interest only when diagnosing problems.
     def debug(self, msg):
         logging.debug(msg)
@@ -70,6 +87,7 @@ class Logger:
 """
 Global Logger for pytma
 """
+log = Logger('.', "pytma")
 
 if __name__ == '__main__':
     log = Logger('.', "pytma")

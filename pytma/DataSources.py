@@ -1,11 +1,7 @@
 import os
 import pandas as pd
 import wget
-
-#from pytma.Utility import log
-from pytma.Utility import Logger
-
-log = Logger('.', "pytma")
+from pytma.Utility import log
 
 def get_transcription_data():
     """
@@ -85,6 +81,7 @@ def download_tolstoy_novels():
 
 
 if __name__ == '__main__':
+
     download_tolstoy_novels()
 
 print("done")
