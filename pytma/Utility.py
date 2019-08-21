@@ -3,6 +3,8 @@
 import logging
 
 import nltk
+
+
 def nltk_init(datasets):
     """
     Function that initializes NLTK data sets
@@ -22,6 +24,7 @@ def nltk_init(datasets):
             print("nltk.download fail on " + set)
             raise
 
+
 class Logger:
     """
     Log wrapper
@@ -30,7 +33,8 @@ class Logger:
     :parameter
 
     """
-    def __init__(self,log_path, file_name):
+
+    def __init__(self, log_path, file_name):
         logFormatter = logging.Formatter("%(asctime)s [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s")
         rootLogger = logging.getLogger()
 
@@ -42,13 +46,12 @@ class Logger:
         consoleHandler.setFormatter(logFormatter)
         rootLogger.addHandler(consoleHandler)
 
-
     # DEBUG :Detailed information, typically of interest only when diagnosing problems.
     def debug(self, msg):
         logging.debug(msg)
 
     # INFO: Confirmation that things are working as expected.
-    def info(self,msg):
+    def info(self, msg):
         logging.info(msg)
 
     # WARNING: An indication that something unexpected happened, or indicative of some problem in the near future (e.g. ‘disk space low’). The software is still working as expected.
@@ -63,9 +66,13 @@ class Logger:
     def critical(self, msg):
         logging.critical(msg)
 
-if __name__ == '__main__':
 
-    log =Logger('.', "pytma")
+"""
+Global Logger for pytma
+"""
+
+if __name__ == '__main__':
+    log = Logger('.', "pytma")
 
     log.info("information")
 
@@ -76,6 +83,3 @@ if __name__ == '__main__':
     log.error("error")
 
     log.critical("critical message")
-
-
-

@@ -1,6 +1,11 @@
 import os
+import pandas as pd
 import wget
 
+#from pytma.Utility import log
+from pytma.Utility import Logger
+
+log = Logger('.', "pytma")
 
 def get_transcription_data():
     """
@@ -20,6 +25,7 @@ def get_transcription_data():
         medical_df : pandas data frame with transcription data.
         -------
         """
+    log.info("preparing transcription data")
     data_path = os.path.join(os.path.dirname(__file__), 'data')
     file_name = data_path + "/mtsamples.csv"
     medical_df = pd.read_csv(file_name)
@@ -27,21 +33,37 @@ def get_transcription_data():
     return medical_df
 
 
-def get_tolstoy_novels():
+def download_tolstoy_novels():
     """
-    Anna Karenina
-    Boyhood
-    Childhood
-    The Cossacks
-    The Death of Ivan Ilyich
-    Family Happiness
-    Hadji Murat
-    The Kreutzer Sonata
-    Resurrection
-    Youth
+    Download Tolstoy novels from project Gutenberg
+    These are placed in the cache folder
+
+        - Anna Karenina
+        - Boyhood
+        - Childhood
+        - The Cossacks
+        - The Kreutzer Sonata
+        - Youth
+
+    ==================
+
+    These are works we'd like to add to the collection :
+
+        - Resurrection
+        - The Death of Ivan Ilyich
+        - Family Happiness
+        - Hadji Murat
 
     :return:
     """
+    if not os.path.exists('cache'):
+        try:
+            os.mkdir('cache')
+        except OSError:
+            log.info("Creation of the cache directory failed")
+        else:
+            log.info("Successfully created the cache directory ")
+
     items = dict()
 
     items["AnnaKarenina"] = "https://www.gutenberg.org/files/1399/1399-0.txt"
@@ -51,16 +73,18 @@ def get_tolstoy_novels():
     items["TheKreutzerSonata"] = "https://www.gutenberg.org/files/689/689-0.txt"
     items["Youth"] = "https://www.gutenberg.org/files/2637/2637-0.txt"
     items["WarAndPeace"] = "https://www.gutenberg.org/files/2600/2600-0.txt"
-    # TheDeathofIvanIlyich = ""
-    # FamilyHappiness = ""
-    # HadjiMurat = ""
-    # Sonata=""
-    # Resurrection=""
+
     for item in items:
-        print(item)
-        filename = wget.download(items[item])
+        log.info(item)
+        out_name = 'cache/' + item + '.txt'
+        if not os.path.exists(out_name):
+            filename = wget.download(items[item], out=out_name)
+            log.info("Dowloaded : " + filename)
+        else:
+            log.info("Found in cache : " + out_name)
 
 
 if __name__ == '__main__':
+    download_tolstoy_novels()
 
-    get_tolstoy_novels()
+print("done")

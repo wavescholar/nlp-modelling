@@ -5,4 +5,6 @@ doc/_build/
 doc/auto_examples/
 doc/gen_api/
 .idea/
+.idea
 *.log
+cache/
