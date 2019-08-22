@@ -84,4 +84,4 @@ if __name__ == '__main__':
 
     download_tolstoy_novels()
 
-print("done")
+    log.info("done")

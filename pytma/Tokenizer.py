@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 from nltk.probability import FreqDist
 from nltk.tokenize import word_tokenize
 
+from pytma.Utility import log
+
+
 class Tokenizer:
     """Class for tokenization of text"""
 
@@ -110,7 +113,7 @@ if __name__ == '__main__':
     The sky is pinkish-blue. You shouldn't eat cardboard"""
 
     t = Tokenizer(test_text)
-    print(t.to_words())
-    print(t.to_sentences())
-    print(t.freqs())
+    log.info(t.to_words())
+    log.info(t.to_sentences())
+    log.info(t.freqs())
     t.plot_freqs()

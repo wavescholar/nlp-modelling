@@ -12,6 +12,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
 from numpy import array
 
+from pytma.DataSources import get_transcription_data
+from pytma.Utility import log
+
+
 class LDAAnalysis:
     def __init__(self, docs, num_topics=5, chunksize=500, passes=20, iterations=400, eval_every=1):
         self.docs = docs
@@ -67,9 +71,9 @@ class LDAAnalysis:
         self.dictionary.filter_extremes(no_below=10, no_above=0.2)
         # Create dictionary and corpus required for Topic Modeling
         self.corpus = [self.dictionary.doc2bow(doc) for doc in docs]
-        print('Number of unique tokens: %d' % len(self.dictionary))
-        print('Number of documents: %d' % len(self.corpus))
-        print(self.corpus[:1])
+        log.info('Number of unique tokens: %d' % len(self.dictionary))
+        log.info('Number of documents: %d' % len(self.corpus))
+        log.info(self.corpus[:1])
 
         # Make a index to word dictionary.
         temp = self.dictionary[0]  # only to "load" the dictionary.
@@ -80,7 +84,7 @@ class LDAAnalysis:
                              iterations=self.iterations, num_topics=self.num_topics, \
                              passes=self.passes, eval_every=self.eval_every)
         # Print the Keyword in the 5 topics
-        print(lda_model.print_topics())
+        log.info(lda_model.print_topics())
         self.lda_model = lda_model
         return self.lda_model
 
@@ -95,12 +99,12 @@ class LDAAnalysis:
         # Compute Coherence Score using c_v
         coherence_model_lda = CoherenceModel(model=self.lda_model, texts=self.docs, dictionary=self.dictionary,coherence='c_v')
         coherence_lda_CV = coherence_model_lda.get_coherence()
-        print('\nCoherence Score CV method: ', coherence_lda_CV)
+        log.info('\nCoherence Score CV method: ', coherence_lda_CV)
 
         # Compute Coherence Score using UMass
         coherence_model_lda = CoherenceModel(model=self.lda_model, texts=self.docs, dictionary=self.dictionary,coherence="u_mass")
         coherence_lda_umass = coherence_model_lda.get_coherence()
-        print('\nCoherence Score: ', coherence_lda_umass)
+        log.info('\nCoherence Score: ', coherence_lda_umass)
 
         return  coherence_lda_CV, coherence_lda_umass
 
@@ -128,7 +132,7 @@ class LDAAnalysis:
             model = LdaModel(corpus=self.corpus, id2word=id2word, num_topics=num_topics)
             model_list.append(model)
             coherencemodel = CoherenceModel(model=model, texts=self.docs, dictionary=self.dictionary, coherence='u_mass')
-            print(coherencemodel.get_coherence())
+            log.info(coherencemodel.get_coherence())
             coherence_values.append(coherencemodel.get_coherence())
 
 
@@ -162,15 +166,15 @@ class NNMFTopicAnalysis:
         feature_names = vectorizer.get_feature_names()
 
         for topic_idx, topic in enumerate(nmf.components_):
-            print("Topic #%d:" % topic_idx)
-            print(" ".join([feature_names[i]
+            log.info("Topic #%d:" % topic_idx)
+            log.info(" ".join([feature_names[i]
                             for i in topic.argsort()[:-self.top_words - 1:-1]]))
-            print()
+            log.info()
 
 if __name__ == '__main__':
     # This will be the unit test
 
-    medical_df = pytma.get_transcription_data()
+    medical_df = get_transcription_data()
 
     docs = array(medical_df['keywords'])
 
@@ -186,11 +190,11 @@ if __name__ == '__main__':
     do_process = True
     if do_process:
         lda.fit()
-        pickle_LDAAnalysis = open("LDAAnalysis.pkl", "wb")
+        pickle_LDAAnalysis = open("cache/LDAAnalysis.pkl", "wb")
         pickle.dump(LDAAnalysis, pickle_LDAAnalysis)
         pickle_LDAAnalysis.close()
     else:
-        LDAAnalysis = pickle.load("LDAAnalysis.pkl")
+        LDAAnalysis = pickle.load("cache/LDAAnalysis.pkl")
 
     lda.coherence_values()
 

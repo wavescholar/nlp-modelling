@@ -10,6 +10,7 @@ import numpy as np
 
 from pytma.StopWord import StopWord
 from pytma.Tokenizer import Tokenizer
+from pytma.Utility import log
 
 
 class Featurize:
@@ -89,7 +90,7 @@ if __name__ == '__main__':
 
     text = sw.remove(swList)
 
-    print(text)
+    log.info(text)
 
     text = " ".join(text)
 
@@ -97,18 +98,18 @@ if __name__ == '__main__':
 
     text_tf = feat.tf()
 
-    print(text_tf)
+    log.info(text_tf)
 
-    print(len(test_text.split()))
+    log.info(len(test_text.split()))
 
-    print(len(set(test_text.split())))
+    log.info(len(set(test_text.split())))
 
     text_tf_idf = feat.tf_idf()
 
-    print(text_tf_idf)
+    log.info(text_tf_idf)
 
     text_vectors = feat.wtv_spacy()
 
     feat.pca_wv(text_vectors)
 
-    print("done")
+    log.info("done")
