@@ -4,6 +4,9 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
+from pytma.Utility import log
+
+
 class Sentiment:
     """
     Sentiment analyzer.  Supervised via NaiveBayes or unsupervised via Valence method.
@@ -30,7 +33,7 @@ class Sentiment:
         test_data = "Manchurian was hot and spicy"
         test_data_features = {word.lower(): (word in word_tokenize(test_data.lower())) for word in dictionary}
 
-        print(classifier.classify(test_data_features))
+        log.info(classifier.classify(test_data_features))
 
     def valenceSentiment(self,text):
         """
@@ -41,11 +44,11 @@ class Sentiment:
         """
         sid = SentimentIntensityAnalyzer()
         for sentence in text:
-            print(sentence)
+            log.info(sentence)
             ss = sid.polarity_scores(sentence)
             for k in ss:
-                print('{0}: {1}, '.format(k, ss[k]), end ='')
-                print()
+                log.info('{0}: {1}, '.format(k, ss[k]), end ='')
+                log.info()
 
 if __name__ == '__main__':
     #This will be the unit test
@@ -72,7 +75,7 @@ if __name__ == '__main__':
 
     sent.valenceSentiment(test_text_unsupervised)
 
-    print("done")
+    log.info("done")
 
     # # Get the movie sentiment data and implement in test
     # X_train, X_test, y_train, y_test = train_test_split(text_tf, data['Sentiment'], test_size=0.3, random_state=123)
@@ -82,4 +85,4 @@ if __name__ == '__main__':
     # # Model Generation Using Multinomial Naive Bayes
     # clf = MultinomialNB().fit(X_train, y_train)
     # predicted = clf.predict(X_test)
-    # print("MultinomialNB Accuracy:", metrics.accuracy_score(y_test, predicted))
+    # log.info("MultinomialNB Accuracy:", metrics.accuracy_score(y_test, predicted))

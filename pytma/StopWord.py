@@ -6,6 +6,9 @@ import spacy
 from enum import Enum
 import nltk
 
+from pytma.Utility import log
+
+
 class StopWord:
     class SwLibEnum(Enum):
         scikit_sw = 1
@@ -61,14 +64,14 @@ if __name__ == '__main__':
 
     swList = StopWord.SwLibEnum.spacy_sw
     test_text_sw_removed_spacy = sw.remove(swList)
-    print(test_text_sw_removed_spacy)
+    log.info(test_text_sw_removed_spacy)
 
     swList = StopWord.SwLibEnum.scikit_sw
     test_text_sw_removed_scikit = sw.remove(swList)
-    print(test_text_sw_removed_scikit)
+    log.info(test_text_sw_removed_scikit)
 
     swList = StopWord.SwLibEnum.nltk_sw
     test_text_sw_removed_nltk = sw.remove(swList)
-    print(test_text_sw_removed_nltk)
+    log.info(test_text_sw_removed_nltk)
 
-    print("done")
+    log.info("done")

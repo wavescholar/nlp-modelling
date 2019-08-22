@@ -8,6 +8,9 @@ from nltk.corpus import stopwords
 from nltk.corpus import wordnet
 from nltk.stem.porter import PorterStemmer
 
+from pytma.Utility import log
+
+
 class Lemmatize:
     """Lematizer class:  Wordnet or spacy"""
 
@@ -82,10 +85,10 @@ if __name__ == '__main__':
     lem = Lemmatize()
 
     result = lem.lemmatize_nltk_with_POS(test_text)
-    print(result)
+    log.info(result)
 
     result = lem.lemmatize_spacy(test_text)
-    print(result)
+    log.info(result)
 
     result = lem.porter_stemmer(test_text)
-    print(result)
+    log.info(result)

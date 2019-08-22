@@ -11,7 +11,7 @@ nlp-modelling is a Python project that demonstrating a variety of NLP modelling 
 
 ### Organization of the  project
 
-This project uses TravisCI for continuous integration, Sphinx for documentation, and Make for Pep8. Unit tests are run with pytest. 
+This project uses TravisCI for continuous integration, Sphinx for documentation, and Make for Pep8. Unit tests are run with pytest.
 
 The project has the following structure:
 
@@ -69,7 +69,7 @@ The project has the following structure:
 │   └── LDAWorkflow.py
 └── setup.py
 ```
- 
+
 In the module code, we follow the convention that all functions are either
 imported from other places, or are defined in lines that precede the lines that
 use that function. This helps readability of the code, because you know that if
@@ -78,16 +78,14 @@ either as a function/variable definition, or as an import from some other module
 or package.
 
 We follow the
-[PEP8 code formatting standard](https://www.python.org/dev/peps/pep-0008/), and  enforce this by running a code-linter 
+[PEP8 code formatting standard](https://www.python.org/dev/peps/pep-0008/), and  enforce this by running a code-linter
 [`flake8`](http://flake8.pycqa.org/en/latest/), which automatically checks the
 code and reports any violations of the PEP8 standard (and checks for other
   general code hygiene issues), see below.
 
 ### Project Data
 
-The project data is rather small, and recorded in csv
-files.  Thus, it can be stored alongside the module code.The data can be found in `pytma/data` standard file-system location for
-the data at:
+The project data is rather small, and recorded in csv files.  Thus, it can be stored alongside the module code.The data can be found in `pytma/data` standard file-system location for the data at:
 
     import os.path as op
     import pytma
@@ -103,7 +101,7 @@ issued, looking for files with the names that match the pattern `test_*.py`
 of these files, it looks for functions with names that match the pattern
 `test_*`. Typically each function in the module would have a corresponding test
 (e.g. `test_transform_data`).
- 
+
 To run the tests on the command line, change your present working directory to
 the top-level directory of the repository (e.g. `/Users/arokem/code/pytma`),
 and type:
@@ -120,7 +118,7 @@ will see a message such as:
     =================================== FAILURES ===================================
     ________________________________ test_that_failes ________________________________
 
-  
+
   pytma/tests/test_pytma.py:49: AssertionError
     ====================== 1 failed, 4 passed in 0.82 seconds ======================
 ```
@@ -167,7 +165,7 @@ This will generate the static webpages in the `doc/_build/html`, which you
 can then upload to a website of your choice.
 
 
-We also deploy documentation to, [readthedocs.org](https://readthedocs.org) 
+We also deploy documentation to, [readthedocs.org](https://readthedocs.org)
 ![RTD conf](https://github.com/uwescience/pytma/blob/master/doc/_static/RTD-advanced-conf.png)
 
  http://pytma.readthedocs.org/en/latest/
@@ -225,13 +223,9 @@ to install the travis command-line interface
 ### Licensing
 
 We use the MIT license. You can read the conditions of the license in the
-`LICENSE` file. 
+`LICENSE` file.
 
 
 ### Scripts
 
-The scripts directory contains workflow scripts and Jupyter Notebooks. Generally we prefer to keep code in .py files. Using Sphynx and rst to blend latex, plots, and python is a great alternative to Jupyter. Otherwise, using Jupyter like R markdown to render static html is acceptable if you're mainly calling into module code.  Generally we try to keep away from doing lots of development in the Jupyer ecosystem. This way by using small and incremental commits of Python code to git repositories we can see how the project evolved. This is better than doing lots of upfront development in a notebook and then trying to refactor it.  We maintain that over time - starting with good devops practices more agile than the quick and dirty notebook style of data science development. 
-  
-
-
-
+The scripts directory contains workflow scripts and Jupyter Notebooks. Generally we prefer to keep code in .py files. Using Sphynx and rst to blend latex, plots, and python is a great alternative to Jupyter. Otherwise, using Jupyter like R markdown to render static html is acceptable if you're mainly calling into module code.  Generally we try to keep away from doing lots of development in the Jupyer ecosystem. This way by using small and incremental commits of Python code to git repositories we can see how the project evolved. This is better than doing lots of upfront development in a notebook and then trying to refactor it.  We maintain that over time - starting with good devops practices more agile than the quick and dirty notebook style of data science development.
