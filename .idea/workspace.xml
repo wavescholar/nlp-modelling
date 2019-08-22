@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Lemmatize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Lemmatize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Sentiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Sentiment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/StopWord.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/StopWord.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Tokenizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Tokenizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytma/TopicModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/TopicModel.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -194,7 +190,7 @@
       <workItem from="1566312746648" duration="1197000" />
       <workItem from="1566403756823" duration="3872000" />
       <workItem from="1566421098524" duration="2189000" />
-      <workItem from="1566486270897" duration="672000" />
+      <workItem from="1566486270897" duration="3508000" />
     </task>
     <servers />
   </component>
@@ -289,8 +285,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/Featurize.py</url>
-          <line>113</line>
+          <line>114</line>
           <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
+          <line>196</line>
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -303,7 +304,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/nlp_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1566486487754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1566488581707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
     <SUITE FILE_PATH="coverage/topic_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1563843963292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
   </component>
 </project>

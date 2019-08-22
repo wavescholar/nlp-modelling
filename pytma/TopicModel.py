@@ -169,7 +169,6 @@ class NNMFTopicAnalysis:
             log.info("Topic #%d:" % topic_idx)
             log.info(" ".join([feature_names[i]
                             for i in topic.argsort()[:-self.top_words - 1:-1]]))
-            log.info()
 
 if __name__ == '__main__':
     # This will be the unit test
@@ -188,10 +187,11 @@ if __name__ == '__main__':
     lda = LDAAnalysis(docs)
 
     do_process = True
+
     if do_process:
         lda.fit()
         pickle_LDAAnalysis = open("cache/LDAAnalysis.pkl", "wb")
-        pickle.dump(LDAAnalysis, pickle_LDAAnalysis)
+        pickle.dump(lda, pickle_LDAAnalysis)
         pickle_LDAAnalysis.close()
     else:
         LDAAnalysis = pickle.load("cache/LDAAnalysis.pkl")
