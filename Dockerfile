@@ -36,20 +36,7 @@ EXPOSE 80
 # Define environment variable
 #ENV NAME World
 
+RUN pip install .
+
 # Run LDAWorkflow -when the container launches
-#CMD ["python", "scripts/LDAWorkflow.py"]
-
-#  Set up Jupyter 
-ENV JUPYTER_PORT 8888
-ENV JUPYTER_PASS ''
-ENV JUPYTER_WORKDIR /
-
-ADD ./examples/notebooks/cfg_notebook.py /root
-RUN echo $'python /root/cfg_notebook.py -l ${JUPYTER_PORT} -p "${JUPYTER_PASS}" >& 1 \n\
-jupyter notebook --notebook-dir=${JUPYTER_WORKDIR} --allow-root --no-browser >& 1 \n\
-/bin/bash \n\
-exit 0'>>/etc/rc.d/rc.local
-
-RUN chmod +x /etc/rc.d/rc.local
-
-CMD /bin/bash /etc/rc.local
+CMD ["python", "scripts/LDAWorkflow.py"]

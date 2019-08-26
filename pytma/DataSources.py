@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import wget
+import pytma
 from pytma.Utility import log
 
 def get_transcription_data():
@@ -52,9 +53,9 @@ def download_tolstoy_novels():
 
     :return:
     """
-    if not os.path.exists('cache'):
+    if not os.path.exists('data/cache'):
         try:
-            os.mkdir('cache')
+            os.mkdir('data/cache')
         except OSError:
             log.info("Creation of the cache directory failed")
         else:
@@ -72,7 +73,7 @@ def download_tolstoy_novels():
 
     for item in items:
         log.info(item)
-        out_name = 'cache/' + item + '.txt'
+        out_name = 'data/cache/' + item + '.txt'
         if not os.path.exists(out_name):
             filename = wget.download(items[item], out=out_name)
             log.info("Dowloaded : " + filename)

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
-import pytma
 import re
 import nltk
 import gensim
-from gensim import corpora, models
+from pytma import Utility
+from pytma import DataSources
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet
 from nltk.tokenize import RegexpTokenizer
@@ -12,7 +12,6 @@ from nltk.stem import WordNetLemmatizer
 import spacy
 import pyLDAvis
 import pyLDAvis.gensim as gensimvis
-import os.path as op
 import pickle
 
 
@@ -20,9 +19,9 @@ if __name__ == '__main__':
 
     # Get the nltk data we need
     datasets = ['stopwords', 'punkt', 'averaged_perceptron_tagger', 'wordnet']
-    pytma.nltk_init(datasets)
+    Utility.nltk_init(datasets)
 
-    medical_df = pytma.get_transcription_data()
+    medical_df = DataSources.get_transcription_data()
 
     # run this to initialize the pre-possessing tools
     token = RegexpTokenizer(r'[a-zA-Z]+')  # not sure if numbers affect results
@@ -77,12 +76,12 @@ if __name__ == '__main__':
     do_process = False
     if do_process:
         processed = medical_df["transcription"].map(preprocess)
-        pickle_processed = open("preprocesed.pkl", "wb")
+        pickle_processed = open("../pytma/data/cache/LDAWorkflow.preprocesed.pkl", "wb")
         pickle.dump(processed, pickle_processed)
         pickle_processed.close()
     else:
-        processed = pickle.load("preprocesed.pkl")
-
+        with open("../pytma/data/cache/LDAWorkflow.preprocesed.pkl", 'rb') as pickle_file:
+            processed = pickle.load(pickle_file)
 
     dictionary = gensim.corpora.Dictionary(processed)  # dictionary gives unique ids to the words for easier processing
     print(type(dictionary))
@@ -160,7 +159,7 @@ if __name__ == '__main__':
 
     print("=" * 20)
 
-    pickle_lda = open("lda_model_15.pkl", "wb")
+    pickle_lda = open("..../pytma/data/cache/lda_model_15.pkl", "wb")
     pickle.dump(lda_model, pickle_lda)
     pickle_lda.close()
 
