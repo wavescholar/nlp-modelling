@@ -12,7 +12,7 @@ def test_novel_data():
 
     try:
         print("getting novels from test location " + os.getcwd())
-        download_tolstoy_novels('pytma/data/cache/')
+        download_tolstoy_novels('./')
     except DataSourceError:
         pytest.fail("Unexpected DataSourceError ..")
 
