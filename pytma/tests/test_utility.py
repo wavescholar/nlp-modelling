@@ -2,10 +2,8 @@ import pytest
 
 import pytma
 from pytma import Utility
+from pytma.Utility import LogError
 
-
-class LogError(object):
-    pass
 
 def test_logger():
     """

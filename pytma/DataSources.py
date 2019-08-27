@@ -4,6 +4,10 @@ import wget
 import pytma
 from pytma.Utility import log
 
+
+class DataSourceError(Exception):
+    pass
+
 def get_transcription_data():
     """
         Function that returns medical transcription data
@@ -22,12 +26,16 @@ def get_transcription_data():
         medical_df : pandas data frame with transcription data.
         -------
         """
-    log.info("preparing transcription data")
-    data_path = os.path.join(os.path.dirname(__file__), 'data')
-    file_name = data_path + "/mtsamples.csv"
-    medical_df = pd.read_csv(file_name)
-    medical_df = medical_df.dropna(axis=0, how='any')
-    return medical_df
+    try:
+        log.info("preparing transcription data")
+        data_path = os.path.join(os.path.dirname(__file__), 'data')
+        file_name = data_path + "/mtsamples.csv"
+        medical_df = pd.read_csv(file_name)
+        medical_df = medical_df.dropna(axis=0, how='any')
+        return medical_df
+    except Exception as e:
+        print(e.message, e.args)
+        raise DataSourceError
 
 
 def download_tolstoy_novels():
@@ -72,14 +80,18 @@ def download_tolstoy_novels():
     items["WarAndPeace"] = "https://www.gutenberg.org/files/2600/2600-0.txt"
 
     for item in items:
-        log.info(item)
-        out_name = 'data/cache/' + item + '.txt'
-        if not os.path.exists(out_name):
-            filename = wget.download(items[item], out=out_name)
-            log.info("Dowloaded : " + filename)
-        else:
-            log.info("Found in cache : " + out_name)
+        try:
+            log.info(item)
+            out_name = 'data/cache/' + item + '.txt'
+            if not os.path.exists(out_name):
+                filename = wget.download(items[item], out=out_name)
+                log.info("Dowloaded : " + filename)
+            else:
+                log.info("Found in cache : " + out_name)
 
+        except Exception as e:
+            log.error("problem with getting novel " + out_name)
+            raise DataSourceError
 
 if __name__ == '__main__':
 
