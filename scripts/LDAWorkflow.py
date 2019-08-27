@@ -14,6 +14,7 @@ import pyLDAvis
 import pyLDAvis.gensim as gensimvis
 import pickle
 
+#This script is going to go away - most of the fuctionality has been ported to pytma
 
 if __name__ == '__main__':
 
@@ -163,5 +164,7 @@ if __name__ == '__main__':
     pickle.dump(lda_model, pickle_lda)
     pickle_lda.close()
 
-    lda_vis = gensimvis.prepare(lda_model, bow_corpus, dictionary)
-    pyLDAvis.display(lda_vis)
+    doLDAVis = False
+    if doLDAVis==True:
+        lda_vis = gensimvis.prepare(lda_model, bow_corpus, dictionary)
+        pyLDAvis.display(lda_vis)

@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/DataSources.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/DataSources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Utility.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/LDAWorkflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/LDAWorkflow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/lda_model_15.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/preprocesed.pkl" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +64,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1OVVI8TeyVTbKB0d190FK9trOef" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql&#10;postgresql" />
@@ -195,7 +195,7 @@
       <workItem from="1566403756823" duration="3872000" />
       <workItem from="1566421098524" duration="2189000" />
       <workItem from="1566486270897" duration="3508000" />
-      <workItem from="1566829073223" duration="4559000" />
+      <workItem from="1566829073223" duration="7483000" />
     </task>
     <servers />
   </component>
@@ -220,7 +220,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>166</line>
+          <line>169</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -280,7 +280,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>85</line>
+          <line>86</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>

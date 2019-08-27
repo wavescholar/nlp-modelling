@@ -25,6 +25,10 @@ def nltk_init(datasets):
             raise
 
 
+class LogError(object):
+    pass
+
+
 class Logger:
     """
     Log wrapper
@@ -35,18 +39,23 @@ class Logger:
     """
 
     def __init__(self, log_path, file_name):
-        logFormatter = logging.Formatter("%(asctime)s [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s")
-        rootLogger = logging.getLogger()
+        try:
+            logFormatter = logging.Formatter("%(asctime)s [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s")
+            rootLogger = logging.getLogger()
 
-        fileHandler = logging.FileHandler("{0}/{1}.log".format(log_path, file_name))
-        fileHandler.setFormatter(logFormatter)
-        rootLogger.addHandler(fileHandler)
+            fileHandler = logging.FileHandler("{0}/{1}.log".format(log_path, file_name))
+            fileHandler.setFormatter(logFormatter)
+            rootLogger.addHandler(fileHandler)
 
-        consoleHandler = logging.StreamHandler()
-        consoleHandler.setFormatter(logFormatter)
-        rootLogger.addHandler(consoleHandler)
+            consoleHandler = logging.StreamHandler()
+            consoleHandler.setFormatter(logFormatter)
+            rootLogger.addHandler(consoleHandler)
 
-        logging.getLogger().setLevel(logging.INFO)
+            logging.getLogger().setLevel(logging.INFO)
+
+        except Exception as e:
+            print(e.message, e.args)
+            raise LogError
 
     def setLogLevel(self, level):
         """
