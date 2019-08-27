@@ -4,7 +4,8 @@
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytma/DataSources.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/DataSources.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/tests/test_pytma.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/tests/test_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Utility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/tests/test_DataSources.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/tests/test_DataSources.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytma/tests/test_utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/tests/test_utility.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,7 +75,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pytma/tests/test_DataSources.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pytma/DataSources.py" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
@@ -126,12 +127,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytma/tests/test_DataSources.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytma/DataSources.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,7 +197,9 @@
       <workItem from="1566403756823" duration="3872000" />
       <workItem from="1566421098524" duration="2189000" />
       <workItem from="1566486270897" duration="3508000" />
-      <workItem from="1566829073223" duration="9009000" />
+      <workItem from="1566829073223" duration="9201000" />
+      <workItem from="1566933860904" duration="11000" />
+      <workItem from="1566934044479" duration="7000" />
     </task>
     <servers />
   </component>
@@ -286,13 +289,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/DataSources.py</url>
-          <line>93</line>
+          <line>94</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/DataSources.py</url>
-          <line>92</line>
+          <line>93</line>
           <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/tests/test_DataSources.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/tests/test_DataSources.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/tests/test_DataSources.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda3/envs/snowflakes/lib/python3.6/site-packages/pytma/DataSources.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda3/envs/snowflakes/lib/python3.6/site-packages/pytma/DataSources.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/DataSources.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

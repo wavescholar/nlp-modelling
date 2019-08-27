@@ -38,7 +38,7 @@ def get_transcription_data():
         raise DataSourceError
 
 
-def download_tolstoy_novels():
+def download_tolstoy_novels(location='data/cache/'):
     """
     Download Tolstoy novels from project Gutenberg
     These are placed in the cache folder
@@ -61,9 +61,9 @@ def download_tolstoy_novels():
 
     :return:
     """
-    if not os.path.exists('data/cache'):
+    if not os.path.exists(location):
         try:
-            os.mkdir('data/cache')
+            os.mkdir(location)
         except OSError:
             log.info("Creation of the cache directory failed")
         else:
@@ -82,10 +82,11 @@ def download_tolstoy_novels():
     for item in items:
         try:
             log.info(item)
-            out_name = 'data/cache/' + item + '.txt'
+            out_name = location + item + '.txt'
             if not os.path.exists(out_name):
-                filename = wget.download(items[item], out=out_name)
+                filename = wget.download(items[item], out =out_name)
                 log.info("Dowloaded : " + filename)
+
             else:
                 log.info("Found in cache : " + out_name)
 

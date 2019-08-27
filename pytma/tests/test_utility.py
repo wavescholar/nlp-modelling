@@ -10,7 +10,7 @@ def test_logger():
     Testing the logging helper.
 
     """
-    log = Utility.Logger('.', "pytma")
+    log = Utility.Logger('.', "test_pytma")
 
     try:
         log.info("information")

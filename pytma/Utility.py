@@ -25,7 +25,7 @@ def nltk_init(datasets):
             raise
 
 
-class LogError(object):
+class LogError(Exception):
     pass
 
 
@@ -54,7 +54,6 @@ class Logger:
             logging.getLogger().setLevel(logging.INFO)
 
         except Exception as e:
-            print(e.message, e.args)
             raise LogError
 
     def setLogLevel(self, level):
