@@ -1,7 +1,12 @@
 import os
-
 import pytest
 from pytma.DataSources import DataSourceError, download_tolstoy_novels, get_transcription_data
+import os.path as op
+import pytma
+
+data_path = op.join(pytma.__path__[0], 'data')
+
+
 
 def test_novel_data():
 
