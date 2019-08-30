@@ -24,7 +24,7 @@ from sklearn.metrics import precision_recall_fscore_support, accuracy_score, pre
 from sklearn.naive_bayes import GaussianNB, MultinomialNB
 from sklearn.ensemble import RandomForestClassifier
 
-datasets = ['stopwords','punkt','averaged_perceptron_tagger','wordnet']
+datasets = ['stopwords', 'punkt', 'averaged_perceptron_tagger', 'wordnet']
 Utility.nltk_init(datasets)
 
 medical_df = DataSources.get_transcription_data()
@@ -67,6 +67,7 @@ def preprocess(text):
     lemmatized = [lemmatizer.lemmatize(w, lemmatize_pos(w)) for w in stopword_processed]
     return ' '.join(lemmatized)
 
+
 do_process = False
 if do_process:
     string_medical_df = []
@@ -105,8 +106,10 @@ for w in medical_df['medical_specialty']:
         count += 1
     else:
         label.append(w_to_label[w])
+
 medical_df['label'] = label
 medical_df = medical_df.dropna(axis=0, how='any')
+
 for (k, v) in w_to_label.items():
     print(k, v)
 
@@ -123,6 +126,7 @@ for (k, v) in w_to_label.items():
             x_test = corpus[test]
             y_test = medical_df['label'][test]
             model = clf.fit(x_train, y_train)
+            print(model)
             predict = clf.predict(x_test)
             p.append(precision_score(predict, y_test, average='weighted'))
             r.append(recall_score(predict, y_test, average='weighted'))
@@ -130,28 +134,35 @@ for (k, v) in w_to_label.items():
         matrix = confusion_matrix(y_true=y_test, y_pred=predict)
         return np.mean(p), np.mean(r), np.mean(f)
 
-
-    results = pd.DataFrame(columns=['Corpus type', 'Precision', 'Recall', 'F1-score'])
+    results = pd.DataFrame(columns=['Classifier', 'Corpus type', 'mean_Precision', 'mean_Recall', 'mean_F1-score'])
 
     m_nv = MultinomialNB()
 
-    unigram_corpus_array =medical_cv_unigram.toarray()
+    unigram_corpus_array = medical_cv_unigram.toarray()
     p, r, f = run_classifier(unigram_corpus_array, m_nv, 5)
 
-    results = results.append({'Corpus type': 'Bag of words - Unigram',
+    results = results.append({'Classifier': 'MultinomialNB',
+                              'Corpus type': 'Bag of words - Unigram',
+                              'mean_Precision': p,
+                              'mean_Recall': r,
+                              'mean_F1-score': f}, ignore_index=True)
+    print(results)
+
+    # BBCREVISIT - memory issue
+    # bigram_corpus =medical_cv_bigram.toarray()
+    #
+    # p, r, f, m = run_classifier(bigram_corpus, m_nv, 5)
+    #
+    # results = results.append({'Classifier': 'MultinomialNB',
+    #                           'Corpus type': 'Bag of words - Bigram,
+    #                           'Precision': p,
+    #                           'Recall': r,
+    #                           'F-score': f}, ignore_index=True)
+
+    rfc = RandomForestClassifier()
+    p, r, f = run_classifier(unigram_corpus_array, rfc, 5)
+    results = results.append({'Classifier': 'RandomForestClassifier',
+                              'Corpus type': 'Bag of words - Unigram',
                               'Precision': p,
                               'Recall': r,
                               'F-score': f}, ignore_index=True)
-
-    bigram_corpus =medical_cv_bigram.toarray()
-
-    p, r, f, m = run_classifier(bigram_corpus, m_nv, 5)
-
-    results = results.append({'Corpus type': 'Bag of words - Bigram',
-                              'Precision': p,
-                              'Recall': r,
-                              'F-score': f}, ignore_index=True)
-
-rfc = RandomForestClassifier()
-p, r, f = run_classifier(rfc, 5)
-pd.DataFrame([[p, r, f]], columns=['precision', 'recall', 'f-score'], index=['Random Forest Classifier'])
