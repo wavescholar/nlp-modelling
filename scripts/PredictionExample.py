@@ -1,18 +1,12 @@
 import pickle
 import warnings
-
-from pytma import DataSources, Utility
-
+from pytma import DataSources, Utility, TopicModel
 warnings.filterwarnings('ignore')
-
 import pandas as pd
-
 import re
-
 import numpy as np
-
+from numpy import array
 import nltk
-
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet
 from nltk.tokenize import RegexpTokenizer
@@ -23,6 +17,9 @@ from sklearn.metrics import precision_recall_fscore_support, accuracy_score, pre
     confusion_matrix
 from sklearn.naive_bayes import GaussianNB, MultinomialNB
 from sklearn.ensemble import RandomForestClassifier
+import matplotlib as plt
+
+showPlots = False
 
 datasets = ['stopwords', 'punkt', 'averaged_perceptron_tagger', 'wordnet']
 Utility.nltk_init(datasets)
@@ -32,7 +29,11 @@ medial_df = [['medical_specialty', 'transcription']]
 medical_df = medical_df.dropna(axis=0, how='any').reset_index()
 medical_df.head(10)
 print(pd.value_counts(medical_df['medical_specialty']))
-pd.value_counts(medical_df['medical_specialty']).plot(kind='bar', figsize=(15, 15), color='orange')
+
+if showPlots:
+    pd.value_counts(medical_df['medical_specialty']).plot(kind='bar', figsize=(15, 15), color='orange')
+    plt.pyplot.show()
+
 pd.value_counts(medical_df['medical_specialty']).describe()
 # run this to initlalize the preprocessing tools
 token = RegexpTokenizer(r'[a-zA-Z]+')  # not sure if numbers affect results
@@ -40,7 +41,6 @@ stop_words = set(stopwords.words("english"))
 skip_words = re.compile('with|without|also|dr|ms|mrs|mr|miss')
 skip_x = re.compile(r'\b([Xx]*)\b')  # remove any consecutive combinations of x and X
 wordnet_lemmatizer = WordNetLemmatizer()
-
 
 # nltk
 def lemmatize_pos(word):
@@ -52,12 +52,10 @@ def lemmatize_pos(word):
 
     return pos_dict.get(tag, wordnet.NOUN)
 
-
 lemmatizer = WordNetLemmatizer()
 lemmatized = [lemmatizer.lemmatize(w, lemmatize_pos(w)) for w in nltk.word_tokenize(medical_df["transcription"][0])]
-print(medical_df["transcription"][0])
-print(" ".join(lemmatized))
-
+#print(medical_df["transcription"][0])
+#print(" ".join(lemmatized))
 
 def preprocess(text):
     skip_words_processed = skip_words.sub("", text)
@@ -139,6 +137,17 @@ for (k, v) in w_to_label.items():
     m_nv = MultinomialNB()
 
     unigram_corpus_array = medical_cv_unigram.toarray()
+
+    medical_df = DataSources.get_transcription_data()
+
+    docs = array(medical_df['transcription'])
+
+    lda = TopicModel.LDAAnalysis(docs)
+
+    lda.fit()
+
+    model = lda.lda_model
+
     p, r, f = run_classifier(unigram_corpus_array, m_nv, 5)
 
     results = results.append({'Classifier': 'MultinomialNB',
@@ -163,6 +172,10 @@ for (k, v) in w_to_label.items():
     p, r, f = run_classifier(unigram_corpus_array, rfc, 5)
     results = results.append({'Classifier': 'RandomForestClassifier',
                               'Corpus type': 'Bag of words - Unigram',
-                              'Precision': p,
-                              'Recall': r,
-                              'F-score': f}, ignore_index=True)
+                              'mean_Precision': p,
+                              'mean_Recall': r,
+                              'mean_F1-score': f}, ignore_index=True)
+
+    print(results)
+
+    print('done')

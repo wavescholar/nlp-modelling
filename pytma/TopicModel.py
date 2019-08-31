@@ -32,9 +32,13 @@ class LDAAnalysis:
     def docs_preprocessor(self):
         tokenizer = RegexpTokenizer(r'\w+')
 
-        for idx in range(len(self.docs)):
-            self.docs[idx] = self.docs[idx].lower()  # Convert to lowercase.
-            self.docs[idx] = tokenizer.tokenize(self.docs[idx])  # Split into words.
+        try:
+
+            for idx in range(len(self.docs)):
+                self.docs[idx] = self.docs[idx].lower()  # Convert to lowercase.
+                self.docs[idx] = tokenizer.tokenize(self.docs[idx])  # Split into words.
+        except ValueError:
+            print("{} {}".format(idx, self.docs[idx]))
 
         # Remove numbers, but not words that contain numbers.
         self.docs = [[token for token in doc if not token.isdigit()] for doc in self.docs]
@@ -53,30 +57,31 @@ class LDAAnalysis:
         from gensim.models import Phrases
 
         # Add bigrams and trigrams to docs,minimum count 10 means only that appear 10 times or more.
-        bigram = Phrases(docs, min_count=10)
-        trigram = Phrases(bigram[docs])
+        bigram = Phrases(self.docs, min_count=10)
+        trigram = Phrases(bigram[self.docs])
 
-        for idx in range(len(docs)):
-            for token in bigram[docs[idx]]:
+        for idx in range(len(self.docs)):
+            for token in bigram[self.docs[idx]]:
                 if '_' in token:
                     # Token is a bigram, add to document.
-                    docs[idx].append(token)
-            for token in trigram[docs[idx]]:
+                    self.docs[idx].append(token)
+            for token in trigram[self.docs[idx]]:
                 if '_' in token:
                     # Token is a bigram, add to document.
-                    docs[idx].append(token)
+                    self.docs[idx].append(token)
         # Remove rare & common tokens
         # Create a dictionary representation of the documents.
-        self.dictionary = Dictionary(docs)
+        self.dictionary = Dictionary(self.docs)
         self.dictionary.filter_extremes(no_below=10, no_above=0.2)
         # Create dictionary and corpus required for Topic Modeling
-        self.corpus = [self.dictionary.doc2bow(doc) for doc in docs]
+        self.corpus = [self.dictionary.doc2bow(doc) for doc in self.docs]
         log.info('Number of unique tokens: %d' % len(self.dictionary))
         log.info('Number of documents: %d' % len(self.corpus))
         log.info(self.corpus[:1])
 
         # Make a index to word dictionary.
         temp = self.dictionary[0]  # only to "load" the dictionary.
+
         id2word = self.dictionary.id2token
 
         lda_model = LdaModel(corpus=self.corpus, id2word=id2word, chunksize=self.chunksize, \
@@ -97,16 +102,18 @@ class LDAAnalysis:
             self.fit()
 
         # Compute Coherence Score using c_v
-        coherence_model_lda = CoherenceModel(model=self.lda_model, texts=self.docs, dictionary=self.dictionary,coherence='c_v')
+        coherence_model_lda = CoherenceModel(model=self.lda_model, texts=self.docs, dictionary=self.dictionary,
+                                             coherence='c_v')
         coherence_lda_CV = coherence_model_lda.get_coherence()
         log.info('\nCoherence Score CV method: ', coherence_lda_CV)
 
         # Compute Coherence Score using UMass
-        coherence_model_lda = CoherenceModel(model=self.lda_model, texts=self.docs, dictionary=self.dictionary,coherence="u_mass")
+        coherence_model_lda = CoherenceModel(model=self.lda_model, texts=self.docs, dictionary=self.dictionary,
+                                             coherence="u_mass")
         coherence_lda_umass = coherence_model_lda.get_coherence()
         log.info('\nCoherence Score: ', coherence_lda_umass)
 
-        return  coherence_lda_CV, coherence_lda_umass
+        return coherence_lda_CV, coherence_lda_umass
 
     def compute_coherence_values(self, limit=40, start=2, step=3):
         """
@@ -131,10 +138,10 @@ class LDAAnalysis:
         for num_topics in range(start, limit, step):
             model = LdaModel(corpus=self.corpus, id2word=id2word, num_topics=num_topics)
             model_list.append(model)
-            coherencemodel = CoherenceModel(model=model, texts=self.docs, dictionary=self.dictionary, coherence='u_mass')
+            coherencemodel = CoherenceModel(model=model, texts=self.docs, dictionary=self.dictionary,
+                                            coherence='u_mass')
             log.info(coherencemodel.get_coherence())
             coherence_values.append(coherencemodel.get_coherence())
-
 
         return model_list, coherence_values
 
@@ -149,13 +156,14 @@ class LDAAnalysis:
         plt.legend(("coherence_values"), loc='best')
         plt.show()
 
+
 class NNMFTopicAnalysis:
-    def __init__(self, docs,num_samples=400,num_features=1000,num_topics=10,top_words=20):
+    def __init__(self, docs, num_samples=400, num_features=1000, num_topics=10, top_words=20):
         self.samples = num_samples
         self.num_features = num_features
         self.num_topics = num_topics
         self.top_words = top_words
-        self.docs= docs
+        self.docs = docs
 
     def fit(self):
         vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, max_features=self.num_features, stop_words='english')
@@ -168,19 +176,15 @@ class NNMFTopicAnalysis:
         for topic_idx, topic in enumerate(nmf.components_):
             log.info("Topic #%d:" % topic_idx)
             log.info(" ".join([feature_names[i]
-                            for i in topic.argsort()[:-self.top_words - 1:-1]]))
+                               for i in topic.argsort()[:-self.top_words - 1:-1]]))
+
 
 if __name__ == '__main__':
     # This will be the unit test
 
     medical_df = get_transcription_data()
 
-    docs = array(medical_df['keywords'])
-
-    # =============================
-    # NNMF
-    nnmf = NNMFTopicAnalysis(docs=docs)
-    nnmf.fit()
+    docs = array(medical_df['transcription'])
 
     # =============================
     # LDA
@@ -190,12 +194,15 @@ if __name__ == '__main__':
 
     if do_process:
         lda.fit()
-        pickle_LDAAnalysis = open("cache/LDAAnalysis.pkl", "wb")
+        pickle_LDAAnalysis = open("data/cache/LDAAnalysis.pkl", "wb")
         pickle.dump(lda, pickle_LDAAnalysis)
         pickle_LDAAnalysis.close()
     else:
-        LDAAnalysis = pickle.load("cache/LDAAnalysis.pkl")
+        LDAAnalysis = pickle.load("data/cache/LDAAnalysis.pkl")
 
     lda.coherence_values()
 
-
+    # =============================
+    # NNMF
+    nnmf = NNMFTopicAnalysis(docs=docs)
+    nnmf.fit()
