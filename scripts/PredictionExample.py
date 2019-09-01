@@ -198,4 +198,8 @@ for (k, v) in w_to_label.items():
 
     log.info(results)
 
+    results.to_csv('doc_classification_results.txt', sep='\t')
+
     print('done')
+
+    gensim.models.

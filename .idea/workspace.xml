@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pytma/tests/test_gensim.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/TopicModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/TopicModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/tests/test_gensim.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/tests/test_gensim.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/PredictionExample.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/PredictionExample.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,6 +102,9 @@
       <module name="topic-modelling" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -391,18 +393,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/PredictionExample.py</url>
-          <line>170</line>
-          <option name="timeStamp" value="137" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/PredictionExample.py</url>
-          <line>169</line>
-          <option name="timeStamp" value="140" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/PredictionExample.py</url>
-          <line>172</line>
-          <option name="timeStamp" value="141" />
+          <line>202</line>
+          <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
