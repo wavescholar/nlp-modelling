@@ -1,6 +1,13 @@
 import pickle
 import warnings
+
+import gensim
+import numpy
+from gensim import corpora
+
 from pytma import DataSources, Utility, TopicModel
+from pytma.Utility import log
+
 warnings.filterwarnings('ignore')
 import pandas as pd
 import re
@@ -42,6 +49,7 @@ skip_words = re.compile('with|without|also|dr|ms|mrs|mr|miss')
 skip_x = re.compile(r'\b([Xx]*)\b')  # remove any consecutive combinations of x and X
 wordnet_lemmatizer = WordNetLemmatizer()
 
+
 # nltk
 def lemmatize_pos(word):
     tag = nltk.pos_tag([word])[0][1][0].upper()
@@ -52,10 +60,13 @@ def lemmatize_pos(word):
 
     return pos_dict.get(tag, wordnet.NOUN)
 
+
 lemmatizer = WordNetLemmatizer()
 lemmatized = [lemmatizer.lemmatize(w, lemmatize_pos(w)) for w in nltk.word_tokenize(medical_df["transcription"][0])]
-#print(medical_df["transcription"][0])
-#print(" ".join(lemmatized))
+
+
+# print(medical_df["transcription"][0])
+# print(" ".join(lemmatized))
 
 def preprocess(text):
     skip_words_processed = skip_words.sub("", text)
@@ -119,9 +130,9 @@ for (k, v) in w_to_label.items():
         k_fold = KFold(n_splits=k, shuffle=True)
         for i in range(k):
             train, test = next(k_fold.split(corpus))
-            x_train = corpus[train]
+            x_train = corpus.iloc[train]
             y_train = medical_df['label'][train]
-            x_test = corpus[test]
+            x_test = corpus.iloc[test]
             y_test = medical_df['label'][test]
             model = clf.fit(x_train, y_train)
             print(model)
@@ -132,23 +143,43 @@ for (k, v) in w_to_label.items():
         matrix = confusion_matrix(y_true=y_test, y_pred=predict)
         return np.mean(p), np.mean(r), np.mean(f)
 
+
     results = pd.DataFrame(columns=['Classifier', 'Corpus type', 'mean_Precision', 'mean_Recall', 'mean_F1-score'])
 
     m_nv = MultinomialNB()
 
+    do_process = False
+    if do_process:
+        docs = array(medical_df['transcription'])
+        lda = TopicModel.LDAAnalysis(docs=docs, num_topics=25)
+        lda.fit()
+
+        lda_feature_vecs = []
+        for i in range(len(docs)):
+            top_topics = lda.lda_model.get_document_topics(lda.corpus[i], minimum_probability=0.0)
+            topic_vec = [top_topics[i][1] for i in range(25)]
+            lda_feature_vecs.append(topic_vec)
+
+        pickle_processed = open("../pytma/data/cache/PredictionExample.lda_feature_vecs.pkl", "wb")
+        pickle.dump(lda_feature_vecs, pickle_processed)
+        pickle_processed.close()
+    else:
+        with open("../pytma/data/cache/PredictionExample.lda_feature_vecs.pkl", 'rb') as pickle_file:
+            lda_feature_vecs = pickle.load(pickle_file)
+
+    lda_corpus = pd.DataFrame(lda_feature_vecs)
+    p, r, f = run_classifier(lda_corpus, m_nv, 5)
+
+    results = results.append({'Classifier': 'MultinomialNB',
+                              'Corpus type': 'LDA Term Topics',
+                              'mean_Precision': p,
+                              'mean_Recall': r,
+                              'mean_F1-score': f}, ignore_index=True)
+    ######################
+
     unigram_corpus_array = medical_cv_unigram.toarray()
 
-    medical_df = DataSources.get_transcription_data()
-
-    docs = array(medical_df['transcription'])
-
-    lda = TopicModel.LDAAnalysis(docs)
-
-    lda.fit()
-
-    model = lda.lda_model
-
-    p, r, f = run_classifier(unigram_corpus_array, m_nv, 5)
+    p, r, f = run_classifier(pd.DataFrame(unigram_corpus_array), m_nv, 5)
 
     results = results.append({'Classifier': 'MultinomialNB',
                               'Corpus type': 'Bag of words - Unigram',
@@ -157,25 +188,14 @@ for (k, v) in w_to_label.items():
                               'mean_F1-score': f}, ignore_index=True)
     print(results)
 
-    # BBCREVISIT - memory issue
-    # bigram_corpus =medical_cv_bigram.toarray()
-    #
-    # p, r, f, m = run_classifier(bigram_corpus, m_nv, 5)
-    #
-    # results = results.append({'Classifier': 'MultinomialNB',
-    #                           'Corpus type': 'Bag of words - Bigram,
-    #                           'Precision': p,
-    #                           'Recall': r,
-    #                           'F-score': f}, ignore_index=True)
-
     rfc = RandomForestClassifier()
-    p, r, f = run_classifier(unigram_corpus_array, rfc, 5)
+    p, r, f = run_classifier(pd.DataFrame(unigram_corpus_array), rfc, 5)
     results = results.append({'Classifier': 'RandomForestClassifier',
                               'Corpus type': 'Bag of words - Unigram',
                               'mean_Precision': p,
                               'mean_Recall': r,
                               'mean_F1-score': f}, ignore_index=True)
 
-    print(results)
+    log.info(results)
 
     print('done')

@@ -185,7 +185,7 @@ if __name__ == '__main__':
     medical_df = get_transcription_data()
 
     docs = array(medical_df['transcription'])
-
+    print(type(docs))
     # =============================
     # LDA
     lda = LDAAnalysis(docs)
