@@ -35,10 +35,10 @@ pytma.Parse module
    :undoc-members:
    :show-inheritance:
 
-pytma.PartOfSpeachTag module
+pytma.POSTag module
 ----------------------------
 
-.. automodule:: pytma.PartOfSpeachTag
+.. automodule:: pytma.POSTag
    :members:
    :undoc-members:
    :show-inheritance:

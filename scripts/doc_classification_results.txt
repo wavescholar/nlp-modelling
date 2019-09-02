@@ -1,0 +1,4 @@
+	Classifier	Corpus type	mean_Precision	mean_Recall	mean_F1-score
+0	MultinomialNB	LDA Term Topics	0.8971334913856633	0.30564102564102563	0.4442538032679397
+1	MultinomialNB	Bag of words - Unigram	0.36570259976011726	0.2966666666666667	0.3164153702574111
+2	RandomForestClassifier	Bag of words - Unigram	0.10966778681727077	0.09538461538461537	0.10083555845972163
