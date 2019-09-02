@@ -6,6 +6,7 @@ import numpy
 from gensim import corpora
 
 from pytma import DataSources, Utility, TopicModel
+from pytma.CTMModel import CTMModel
 from pytma.Utility import log
 
 warnings.filterwarnings('ignore')
@@ -49,8 +50,6 @@ skip_words = re.compile('with|without|also|dr|ms|mrs|mr|miss')
 skip_x = re.compile(r'\b([Xx]*)\b')  # remove any consecutive combinations of x and X
 wordnet_lemmatizer = WordNetLemmatizer()
 
-
-# nltk
 def lemmatize_pos(word):
     tag = nltk.pos_tag([word])[0][1][0].upper()
     pos_dict = {"J": wordnet.ADJ,
@@ -60,13 +59,8 @@ def lemmatize_pos(word):
 
     return pos_dict.get(tag, wordnet.NOUN)
 
-
 lemmatizer = WordNetLemmatizer()
 lemmatized = [lemmatizer.lemmatize(w, lemmatize_pos(w)) for w in nltk.word_tokenize(medical_df["transcription"][0])]
-
-
-# print(medical_df["transcription"][0])
-# print(" ".join(lemmatized))
 
 def preprocess(text):
     skip_words_processed = skip_words.sub("", text)
@@ -75,7 +69,6 @@ def preprocess(text):
     stopword_processed = [w for w in to_lower if not w.lower() in stop_words]
     lemmatized = [lemmatizer.lemmatize(w, lemmatize_pos(w)) for w in stopword_processed]
     return ' '.join(lemmatized)
-
 
 do_process = False
 if do_process:
@@ -123,83 +116,82 @@ for (k, v) in w_to_label.items():
     print(k, v)
 
 
-    def run_classifier(corpus, clf, k):
-        p = []
-        r = []
-        f = []
-        k_fold = KFold(n_splits=k, shuffle=True)
-        for i in range(k):
-            train, test = next(k_fold.split(corpus))
-            x_train = corpus.iloc[train]
-            y_train = medical_df['label'][train]
-            x_test = corpus.iloc[test]
-            y_test = medical_df['label'][test]
-            model = clf.fit(x_train, y_train)
-            print(model)
-            predict = clf.predict(x_test)
-            p.append(precision_score(predict, y_test, average='weighted'))
-            r.append(recall_score(predict, y_test, average='weighted'))
-            f.append(f1_score(predict, y_test, average='weighted'))
-        matrix = confusion_matrix(y_true=y_test, y_pred=predict)
-        return np.mean(p), np.mean(r), np.mean(f)
+def run_classifier(corpus, clf, k):
+    p = []
+    r = []
+    f = []
+    k_fold = KFold(n_splits=k, shuffle=True)
+    for i in range(k):
+        train, test = next(k_fold.split(corpus))
+        x_train = corpus.iloc[train]
+        y_train = medical_df['label'][train]
+        x_test = corpus.iloc[test]
+        y_test = medical_df['label'][test]
+        model = clf.fit(x_train, y_train)
+        print(model)
+        predict = clf.predict(x_test)
+        p.append(precision_score(predict, y_test, average='weighted'))
+        r.append(recall_score(predict, y_test, average='weighted'))
+        f.append(f1_score(predict, y_test, average='weighted'))
+    matrix = confusion_matrix(y_true=y_test, y_pred=predict)
+    return np.mean(p), np.mean(r), np.mean(f)
 
 
-    results = pd.DataFrame(columns=['Classifier', 'Corpus type', 'mean_Precision', 'mean_Recall', 'mean_F1-score'])
+results = pd.DataFrame(columns=['Classifier', 'Corpus type', 'mean_Precision', 'mean_Recall', 'mean_F1-score'])
 
-    m_nv = MultinomialNB()
+m_nv = MultinomialNB()
 
-    do_process = False
-    if do_process:
-        docs = array(medical_df['transcription'])
-        lda = TopicModel.LDAAnalysis(docs=docs, num_topics=25)
-        lda.fit()
+do_process = False
+if do_process:
+    docs = array(medical_df['transcription'])
+    lda = TopicModel.LDAAnalysis(docs=docs, num_topics=25)
+    lda.fit()
 
-        lda_feature_vecs = []
-        for i in range(len(docs)):
-            top_topics = lda.lda_model.get_document_topics(lda.corpus[i], minimum_probability=0.0)
-            topic_vec = [top_topics[i][1] for i in range(25)]
-            lda_feature_vecs.append(topic_vec)
+    lda_feature_vecs = []
+    for i in range(len(docs)):
+        top_topics = lda.lda_model.get_document_topics(lda.corpus[i], minimum_probability=0.0)
+        topic_vec = [top_topics[i][1] for i in range(25)]
+        lda_feature_vecs.append(topic_vec)
 
-        pickle_processed = open("../pytma/data/cache/PredictionExample.lda_feature_vecs.pkl", "wb")
-        pickle.dump(lda_feature_vecs, pickle_processed)
-        pickle_processed.close()
-    else:
-        with open("../pytma/data/cache/PredictionExample.lda_feature_vecs.pkl", 'rb') as pickle_file:
-            lda_feature_vecs = pickle.load(pickle_file)
+    pickle_processed = open("../pytma/data/cache/PredictionExample.lda_feature_vecs.pkl", "wb")
+    pickle.dump(lda_feature_vecs, pickle_processed)
+    pickle_processed.close()
+else:
+    with open("../pytma/data/cache/PredictionExample.lda_feature_vecs.pkl", 'rb') as pickle_file:
+        lda_feature_vecs = pickle.load(pickle_file)
 
-    lda_corpus = pd.DataFrame(lda_feature_vecs)
-    p, r, f = run_classifier(lda_corpus, m_nv, 5)
+lda_corpus = pd.DataFrame(lda_feature_vecs)
+p, r, f = run_classifier(lda_corpus, m_nv, 5)
 
-    results = results.append({'Classifier': 'MultinomialNB',
-                              'Corpus type': 'LDA Term Topics',
-                              'mean_Precision': p,
-                              'mean_Recall': r,
-                              'mean_F1-score': f}, ignore_index=True)
-    ######################
+results = results.append({'Classifier': 'MultinomialNB',
+                          'Corpus type': 'LDA Term Topics',
+                          'mean_Precision': p,
+                          'mean_Recall': r,
+                          'mean_F1-score': f}, ignore_index=True)
+######################
 
-    unigram_corpus_array = medical_cv_unigram.toarray()
+unigram_corpus_array = medical_cv_unigram.toarray()
 
-    p, r, f = run_classifier(pd.DataFrame(unigram_corpus_array), m_nv, 5)
+p, r, f = run_classifier(pd.DataFrame(unigram_corpus_array), m_nv, 5)
 
-    results = results.append({'Classifier': 'MultinomialNB',
-                              'Corpus type': 'Bag of words - Unigram',
-                              'mean_Precision': p,
-                              'mean_Recall': r,
-                              'mean_F1-score': f}, ignore_index=True)
-    print(results)
+results = results.append({'Classifier': 'MultinomialNB',
+                          'Corpus type': 'Bag of words - Unigram',
+                          'mean_Precision': p,
+                          'mean_Recall': r,
+                          'mean_F1-score': f}, ignore_index=True)
+print(results)
 
-    rfc = RandomForestClassifier()
-    p, r, f = run_classifier(pd.DataFrame(unigram_corpus_array), rfc, 5)
-    results = results.append({'Classifier': 'RandomForestClassifier',
-                              'Corpus type': 'Bag of words - Unigram',
-                              'mean_Precision': p,
-                              'mean_Recall': r,
-                              'mean_F1-score': f}, ignore_index=True)
+rfc = RandomForestClassifier()
+p, r, f = run_classifier(pd.DataFrame(unigram_corpus_array), rfc, 5)
+results = results.append({'Classifier': 'RandomForestClassifier',
+                          'Corpus type': 'Bag of words - Unigram',
+                          'mean_Precision': p,
+                          'mean_Recall': r,
+                          'mean_F1-score': f}, ignore_index=True)
 
-    log.info(results)
+log.info(results)
 
-    results.to_csv('doc_classification_results.txt', sep='\t')
+results.to_csv('doc_classification_results.txt', sep='\t')
 
-    print('done')
+print('done')
 
-    gensim.models.
