@@ -1,0 +1,40 @@
+
+
+Examples using ``pytma.Model``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="pytma contains a number of tools for fitting functions to data. This example shows us how to lo...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/model_fitting/images/thumb/sphx_glr_plot_function_fit_thumb.png
+
+        :ref:`sphx_glr_auto_examples_model_fitting_plot_function_fit.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+    * :ref:`sphx_glr_auto_examples_model_fitting_plot_function_fit.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Next we&#x27;ll show off another demonstration of model fitting with pytma. We&#x27;ll generate a bunch o...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/model_fitting/images/thumb/sphx_glr_plot_function_stability_thumb.png
+
+        :ref:`sphx_glr_auto_examples_model_fitting_plot_function_stability.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+    * :ref:`sphx_glr_auto_examples_model_fitting_plot_function_stability.py`

@@ -48,6 +48,6 @@ def test_Featureize():
 
     text_vectors = feat.wtv_spacy()
 
-    feat.pca_wv(text_vectors)
+    #feat.pca_wv(text_vectors)
 
     log.info("done")
