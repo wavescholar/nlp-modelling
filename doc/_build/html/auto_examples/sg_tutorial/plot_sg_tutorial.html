@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>A quick tour of pytma &mdash; pytma 0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="API" href="../../api.html" />
+    <link rel="prev" title="Plotting model stability" href="../model_fitting/plot_function_stability.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pytma
+          
+
+          
+            
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../theory.html">NLP Theory</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">pytma Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#model-fitting-examples">Model fitting examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#gallery">Gallery</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">A quick tour of pytma</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#restructuredtext">reStructuredText</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file-headers-and-naming">File headers and naming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interweaving-code-with-text">Interweaving code with text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plotting-images">Plotting images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-images">Multiple images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-kinds-of-formatting">Other kinds of formatting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pytma</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">pytma Gallery</a> &raquo;</li>
+        
+      <li>A quick tour of pytma</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/auto_examples/sg_tutorial/plot_sg_tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-sg-tutorial-plot-sg-tutorial-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="a-quick-tour-of-pytma">
+<span id="sphx-glr-auto-examples-sg-tutorial-plot-sg-tutorial-py"></span><h1>A quick tour of pytma<a class="headerlink" href="#a-quick-tour-of-pytma" title="Permalink to this headline">¶</a></h1>
+<p>We use the excellent sphinx-gallery to provide a visual tour of some of the
+features of pytma. sphinx-gallery renders html from regular python files. We
+find this to be much better than Jupyter for documentation of workflows and
+example code. We can keep better track of the evolution of the in git this way.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+<div class="section" id="restructuredtext">
+<h2>reStructuredText<a class="headerlink" href="#restructuredtext" title="Permalink to this headline">¶</a></h2>
+<p>The primary benefit of sphinx-gallery is that it allows you to interweave
+<a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> along with
+your regular python code. This means that you can include formatted text
+with the script, all using regular text files. rST has a particular structure
+it expects in order to render properly (it is what sphinx uses as well).</p>
+</div>
+<div class="section" id="file-headers-and-naming">
+<h2>File headers and naming<a class="headerlink" href="#file-headers-and-naming" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx-gallery files must be initialized with a header like the one above.
+It must exist as a part of the triple-quotes docstring at the start of the
+file, and tells SG the title of the page. If you wish, you can include text
+that comes after the header, which will be rendered as a contextual bit of
+information.</p>
+<p>In addition, if you want to render a file with sphinx-gallery, it must match
+the file naming structure that the gallery is configured to look for. By
+default, this is <cite>plot_*.py</cite>.</p>
+</div>
+<div class="section" id="interweaving-code-with-text">
+<h2>Interweaving code with text<a class="headerlink" href="#interweaving-code-with-text" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx-gallery allows you to interweave code with your text. For example, if
+put a few lines of text below…</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># They will be rendered as regular code. Note that now I am typing in a</span>
+<span class="c1"># comment, because we&#39;ve broken the chain of commented lines above.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># If we want to create another formatted block of text, we need to add a line</span>
+<span class="c1"># of `#` spanning the whole line below. Like this:</span>
+</pre></div>
+</div>
+<p>Now we can once again have nicely formatted <span class="math notranslate nohighlight">\(t_{e}\chi^t\)</span>!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s create our y-variable so we can make some plots</span>
+<span class="n">y</span> <span class="o">=</span> <span class="o">.</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="o">.</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="plotting-images">
+<h2>Plotting images<a class="headerlink" href="#plotting-images" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx-gallery captures the images generated by matplotlib. This means that
+we can plot things as normal, and these images will be grouped with the
+text block that the fall underneath. For example, we could plot these two
+variables and the image will be shown below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../_images/sphx_glr_plot_sg_tutorial_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_sg_tutorial_001.png" />
+</div>
+<div class="section" id="multiple-images">
+<h2>Multiple images<a class="headerlink" href="#multiple-images" title="Permalink to this headline">¶</a></h2>
+<p>If we want multiple images, this is easy too. Sphinx-gallery will group
+everything together that’s within the latest text block.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img alt="../../_images/sphx_glr_plot_sg_tutorial_002.png" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_sg_tutorial_002.png" />
+</li>
+<li><img alt="../../_images/sphx_glr_plot_sg_tutorial_003.png" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_sg_tutorial_003.png" />
+</li>
+</ul>
+</div>
+<div class="section" id="other-kinds-of-formatting">
+<h2>Other kinds of formatting<a class="headerlink" href="#other-kinds-of-formatting" title="Permalink to this headline">¶</a></h2>
+<p>Remember, rST can do all kinds of other cool stuff. We can even do things
+like add references to other packages and insert images. Check out this
+<a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">guide</a> for
+some sample rST code.</p>
+<a class="reference internal image-reference" href="http://www.sphinx-doc.org/en/stable/_static/sphinxheader.png"><img alt="http://www.sphinx-doc.org/en/stable/_static/sphinxheader.png" src="http://www.sphinx-doc.org/en/stable/_static/sphinxheader.png" style="width: 80%;" /></a>
+<p>In the meantime, enjoy sphinx-gallery!</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.250 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-sg-tutorial-plot-sg-tutorial-py">
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/298e3e796126905a5a0cbc37f5bb2a5e/plot_sg_tutorial.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_sg_tutorial.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/9b2ad7b0d8935aa43d7f16df8c543c52/plot_sg_tutorial.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_sg_tutorial.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../model_fitting/plot_function_stability.html" class="btn btn-neutral float-left" title="Plotting model stability" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Bruce Campbell
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

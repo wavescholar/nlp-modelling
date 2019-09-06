@@ -12,7 +12,8 @@ nlp-modelling is a Python project that demonstrating a variety of NLP modelling 
 ### Organization of the  project
 
 This project uses TravisCI for continuous integration, Sphinx for documentation, and Make for Pep8. Unit tests are run with pytest.
-
+We have tried to implement integration with Codecov - but that's been intermittent. For now we'll put the coverage
+reports in the repository. 
 The project has the following structure:
 
 ```
@@ -21,53 +22,63 @@ The project has the following structure:
 │   ├── conf.py
 │   ├── index.rst
 │   ├── Makefile
-│   ├── sphinxext
-│   │   ├── docscrape.py
-│   │   ├── docscrape_sphinx.py
-│   │   ├── github.py
-│   │   ├── math_dollar.py
-│   │   └── numpydoc.py
-│   ├── _static
-│   │   ├── git.png
-│   │   ├── logo.png
-│   │   └── RTD-advanced-conf.png
-│   ├── _templates
-│   │   ├── class.rst
-│   │   └── function.rst
 │   └── theory.rst
-├── examples
-│   ├── model_fitting
-│   │   ├── plot_function_fit.py
-│   │   ├── plot_function_stability.py
-│   │   └── README.txt
-│   ├── README.txt
-│   └── sg_tutorial
-│       ├── plot_sg_tutorial.py
-│       └── README.txt
+├── coverage.xml
+├── Dockerfile
 ├── LICENSE
 ├── Makefile
 ├── pytma
+│   ├── CTMModel.py
 │   ├── data
-│   │   └── mtsamples.csv
-│   ├── get_data.py
+│   │   ├── cache
+│   │   │   ├── AnnaKarenina.txt
+│   │   │   ├── Boyhood.txt
+│   │   │   ├── Childhood.txt
+│   │   │   ├── LDAAnalysis.pkl
+│   │   │   ├── LDAAnalysisPreprocessed.pkl
+│   │   │   ├── LDAWorkflow.preprocesed.pkl
+│   │   │   ├── PredictionExample.lda_feature_vecs.pkl
+│   │   │   ├── PredictionExample.preprocesed.pkl
+│   │   │   ├── PredictionExample.term_topics.pkl
+│   │   │   ├── TheCossacks.txt
+│   │   │   ├── TheKreutzerSonata.txt
+│   │   │   ├── WarAndPeace.txt
+│   │   │   └── Youth.txt
+│   │   ├── mtsamples.csv
+│   │   ├── ortho.csv
+│   │   └── para.csv
+│   ├── DataSources.py
+│   ├── Featurize.py
 │   ├── __init__.py
-│   ├── pytma.py
+│   ├── Lemmatize.py
+│   ├── Parse.py
+│   ├── POSTag.py
+│   ├── Predict.py
+│   ├── Preprocess.py
+│   ├── Sentiment.py
+│   ├── StopWord.py
 │   ├── tests
 │   │   ├── __init__.py
-│   │   └── test_pytma.py
+│   │   ├── test_CTMModel.py
+│   │   ├── test_DataSources.py
+│   │   ├── test_example.py
+│   │   ├── test_Featureize.py
+│   │   ├── test_gensim.py
+│   │   ├── test_StanfordNLP.py
+│   │   └── test_utility.py
+│   ├── Tokenizer.py
+│   ├── TopicModel.py
+│   ├── Utility.py
 │   └── version.py
 ├── README.md
 ├── references
-│   ├── CORRELATED TOPIC MODE-BleiLafferty2007.pdf
-│   ├── Evaluation Methods for Topic Models-wallach09evaluation.pdf
-│   ├── Latent Dirichlet Allocation-blei03a.pdf
-│   └── sievert-illvi2014.pdf
 ├── requirements-dev.txt
 ├── requirements.txt
 ├── scripts
-│   ├── lda_model_15.pkl
-│   └── LDAWorkflow.py
-└── setup.py
+│   ├── doc_classification_results.txt
+│   ├── LDAWorkflow.py
+│   ├── PredictionExample.py
+├── setup.py
 ```
 
 In the module code, we follow the convention that all functions are either
@@ -77,21 +88,18 @@ you see some name, the definition of that name will appear earlier in the file,
 either as a function/variable definition, or as an import from some other module
 or package.
 
-We follow the
+We try to follow the
 [PEP8 code formatting standard](https://www.python.org/dev/peps/pep-0008/), and  enforce this by running a code-linter
 [`flake8`](http://flake8.pycqa.org/en/latest/), which automatically checks the
 code and reports any violations of the PEP8 standard (and checks for other
   general code hygiene issues), see below.
 
 ### Project Data
-
-The project data is rather small, and recorded in csv files.  Thus, it can be stored alongside the module code.The data can be found in `pytma/data` standard file-system location for the data at:
-
-    import os.path as op
-    import pytma
-    data_path = op.join(pytma.__path__[0], 'data')
-
-
+The main project data is rather small, and recorded in csv files.  Thus, it can be stored 
+alongside the module code. The data can be found in `pytma/data`
+We pull Tolstoy novels from the Gutenberg Project and store them in `pytma/data/cache` 
+We also use the cache director to store pickled models and preprocessing checkpoints
+ 
 ### Testing
 
 We use the ['pytest'](http://pytest.org/latest/) library for
@@ -103,8 +111,7 @@ of these files, it looks for functions with names that match the pattern
 (e.g. `test_transform_data`).
 
 To run the tests on the command line, change your present working directory to
-the top-level directory of the repository (e.g. `/Users/arokem/code/pytma`),
-and type:
+the top-level directory of the repository,and type:
 
     py.test pytma
 
@@ -122,6 +129,8 @@ will see a message such as:
   pytma/tests/test_pytma.py:49: AssertionError
     ====================== 1 failed, 4 passed in 0.82 seconds ======================
 ```
+
+
 
 The `Makefile` allows you to run the tests with more
 verbose and informative output from the top-level directory, by issuing the

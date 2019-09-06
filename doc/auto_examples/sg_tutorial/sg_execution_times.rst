@@ -1,0 +1,10 @@
+
+:orphan:
+
+.. _sphx_glr_auto_examples_sg_tutorial_sg_execution_times:
+
+Computation times
+=================
+**00:00.250** total execution time for **auto_examples_sg_tutorial** files:
+
+- **00:00.250**: :ref:`sphx_glr_auto_examples_sg_tutorial_plot_sg_tutorial.py` (``plot_sg_tutorial.py``)

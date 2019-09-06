@@ -9,3 +9,4 @@ spacy
 pyLDAvis
 pystan
 wget
+stanfordnlp
