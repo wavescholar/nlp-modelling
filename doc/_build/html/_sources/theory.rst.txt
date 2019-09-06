@@ -27,11 +27,17 @@ Lemmatization is related to stemming, differing in that lemmatization is able to
 better -> good
 It should be easy to see why the implementation of a stemmer would be the less difficult feat of the two. The goal of both stemming and lemmatization is to reduce inflectional forms and sometimes derivationally related forms of a word to a common base form. Stemming usually refers to a crude heuristic process that chops off the ends of words in the hope of achieving this goal correctly most of the time, and often includes the removal of derivational affixes.  Lemmatization usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma
 
-.. math::
-    \int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}
 
-And refer to a paper [author2019]_.
+A good starting point is [Charniak1997]_.
 
-.. [author2019] first a., second a., cheese b. (2019). The title of their 
-                paper. Journal of papers, *15*: 1023-1049.
+.. [Charniak1997] Statistical Language Learning Charniak E Language (1997) 73(3) 588
 
+
+Topic Modeling
+--------------------------------------------------
+
+Topic modeling is about reducing a set of documents (a corpus) to a representation as a mixture of topics.  Each topic is a distribution over the set of words in the corpus. There are two main Bayesian topic models LDA (Latent Dirichlet Allocation) [BleiEtAl2005]_ and CTM (Correlated Topic Model) [BLeiEtAl2003]_  These are Bayesian models that use a variational formulation to fit the models. A limitation of LDA is the inability to model topic correlation.  One would expect that topics are not independent. The correlated topic model allows for the topic proportions to exhibit correlations.  This is achieved via a transformation of logistic normal distribution.  There are additional complications since we loose conjugacy in the prior. LDA is more widely used but we aim to incorporate CTM in this library. We currently use the implementation of gensim for LDA and an implementation of CTM from `https://github.com/lewer/gensim/tree/develop/gensim/models`
+
+.. [BleiEtAl2005] Blei, D. M., & Lafferty, J. D. (2005). Correlated topic models. In Advances in Neural Information Processing Systems (pp. 147–154).
+
+.. [BLeiEtAl2003] Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). Latent Dirichlet allocation. Journal of Machine Learning Research, 3(4–5), 993–1022

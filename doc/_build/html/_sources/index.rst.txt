@@ -5,7 +5,7 @@ Welcome to pytma's documentation!
 
 `pytma` is a library for NLP modelling in Python.
 
-We rely on excellent Python libraries nltk, spacy, and gensim for pre-processing and model fitting.
+We rely on excellent Python libraries nltk, spacy, stanfordNLP, and gensim for pre-processing and model fitting.
 
 To see how to use it, please refer to the `README file
 <https://github.com/brucebcampbell/nlp-modelling/blob/master/README.md>`_ in the Github repository.
