@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnaKarenina.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boyhood.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Childhood.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheCossacks.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheKreutzerSonata.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarAndPeace.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Youth.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -287,7 +291,7 @@
       <workItem from="1566934044479" duration="7000" />
       <workItem from="1567448801252" duration="589000" />
       <workItem from="1567464037234" duration="2175000" />
-      <workItem from="1567784779090" duration="1824000" />
+      <workItem from="1567784779090" duration="2684000" />
     </task>
     <servers />
   </component>
