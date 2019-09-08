@@ -1,10 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import pickle
 import warnings
-
-import gensim
-import numpy
-from gensim import corpora
-
 from pytma import DataSources, Utility, TopicModel
 from pytma.CTMModel import CTMModel
 from pytma.Utility import log

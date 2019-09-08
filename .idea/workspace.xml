@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/DataSources.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/DataSources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Featurize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Featurize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Lemmatize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Lemmatize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Parse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Preprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Sentiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Sentiment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/StopWord.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/StopWord.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Tokenizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Tokenizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/TopicModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/TopicModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Utility.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytma/tests/test_Lemmatize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/tests/test_Lemmatize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/LDAWorkflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/LDAWorkflow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/PredictionExample.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/PredictionExample.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,8 +68,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Python Unit Test" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -406,7 +420,7 @@
       <workItem from="1567464037234" duration="2175000" />
       <workItem from="1567784779090" duration="12786000" />
       <workItem from="1567898020385" duration="6594000" />
-      <workItem from="1567960550432" duration="6661000" />
+      <workItem from="1567960550432" duration="7361000" />
     </task>
     <servers />
   </component>
@@ -431,7 +445,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>169</line>
+          <line>172</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -441,42 +455,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/Tokenizer.py</url>
-          <line>120</line>
+          <line>121</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/Tokenizer.py</url>
-          <line>102</line>
+          <line>103</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/Tokenizer.py</url>
-          <line>88</line>
+          <line>89</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/StopWord.py</url>
-          <line>76</line>
+          <line>77</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/StopWord.py</url>
-          <line>73</line>
+          <line>74</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>86</line>
+          <line>89</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/DataSources.py</url>
-          <line>94</line>
+          <line>97</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/DataSources.py</url>
-          <line>93</line>
+          <line>96</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -506,7 +520,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/DataSources.py</url>
-          <line>83</line>
+          <line>86</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -521,7 +535,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/Tokenizer.py</url>
-          <line>116</line>
+          <line>117</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -531,12 +545,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/PredictionExample.py</url>
-          <line>195</line>
+          <line>193</line>
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/PredictionExample.py</url>
-          <line>141</line>
+          <line>139</line>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -551,7 +565,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/PredictionExample.py</url>
-          <line>151</line>
+          <line>149</line>
           <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -581,17 +595,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/tests/test_Lemmatize.py</url>
-          <line>26</line>
+          <line>29</line>
           <option name="timeStamp" value="158" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/tests/test_Lemmatize.py</url>
-          <line>28</line>
+          <line>31</line>
           <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/Lemmatize.py</url>
-          <line>67</line>
+          <line>68</line>
           <option name="timeStamp" value="161" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -611,12 +625,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/Parse.py</url>
-          <line>81</line>
+          <line>82</line>
           <option name="timeStamp" value="177" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/Parse.py</url>
-          <line>72</line>
+          <line>73</line>
           <option name="timeStamp" value="180" />
         </line-breakpoint>
       </breakpoints>

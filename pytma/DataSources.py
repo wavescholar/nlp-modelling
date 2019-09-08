@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import os
 import pandas as pd
 import wget
@@ -101,5 +104,5 @@ if __name__ == '__main__':
     test_novel_data()
 
     test_medical_data()
-    
+
     log.info("done")

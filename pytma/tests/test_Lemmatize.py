@@ -1,14 +1,17 @@
 import unittest
 
+from pytma import Utility
+
 from pytma.Lemmatize import Lemmatize
 from pytma.Utility import log
 
 
 class TestLemmatize(unittest.TestCase):
     def test_Lemmatize(self):
-        import nltk
-        nltk.download('punkt')
-        nltk.download('stopwords')
+        # Get the nltk data we need
+        datasets = ['stopwords', 'punkt', 'averaged_perceptron_tagger', 'wordnet']
+        Utility.nltk_init(datasets)
+
 
         test_text = "This is the test text. Documents made up of words and/or phrases. \
             The model consists of two tables; the first table is the probability of selecting  \
