@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import nltk
@@ -17,38 +18,61 @@ class Sentiment:
         """
         nltk.download('vader_lexicon')
 
-    def naiveBayesSentiment(self, text):
+        self.vader_polarity_scores = list()
+
+    def naiveBayesSentimentFit(self, text):
         """
-        Supervised sentiment analysis.
+        Supervised sentiment analysis - uses nltk to fit Naive Bayes .
+        Call naiveBayesSentimentPredict to predict  using the latest fit model.
 
         :param text:
         :return:
         """
         dictionary = set(word.lower() for passage in text for word in word_tokenize(passage[0]))
 
+        self.nb_dict = dictionary
+
         t = [({word: (word in word_tokenize(x[0])) for word in dictionary}, x[1]) for x in text]
 
         classifier = nltk.NaiveBayesClassifier.train(t)
 
-        test_data = "Manchurian was hot and spicy"
-        test_data_features = {word.lower(): (word in word_tokenize(test_data.lower())) for word in dictionary}
+        self.nb_classifier = classifier
 
-        log.info(classifier.classify(test_data_features))
+    def naiveBayesSentimentPredict(self,text):
+        """
+        Predicts sentiment.  Call naiveBayesSentimentFit on a corpus first otherwise
+        an error will be thrown.
+
+        :param text:
+        :return predicted sentiment:
+        """
+        if hasattr( self,"nb_classifier") is False:
+            raise AttributeError
+
+        test_data_features = {word.lower(): (word in word_tokenize(text.lower())) for word in self.nb_dict}
+        result = self.nb_classifier.classify(test_data_features)
+        log.info("Sentiment NB predict : " + result)
+
+        return result
+
 
     def valenceSentiment(self,text):
         """
         Unsupervised sentiment analysis.
 
         :param text:
-        :return:
+        :return sentiment polarity scores:
         """
         sid = SentimentIntensityAnalyzer()
         for sentence in text:
             log.info(sentence)
             ss = sid.polarity_scores(sentence)
             for k in ss:
-                log.info('{0}: {1}, '.format(k, ss[k]), end ='')
-                log.info()
+                print(k)
+                print(ss[k])
+                log.info('Logging Sentiment : {0}: {1}, '.format(k, ss[k]))
+                self.vader_polarity_scores.append(k)
+        return self.vader_polarity_scores
 
 if __name__ == '__main__':
     #This will be the unit test
@@ -71,18 +95,12 @@ if __name__ == '__main__':
 
     sent= Sentiment()
 
-    sent.naiveBayesSentiment(test_text_supervised)
+    sent.naiveBayesSentimentFit(test_text_supervised)
 
-    sent.valenceSentiment(test_text_unsupervised)
+    test_data = "Manchurian was hot and spicy"
+    nb_sentiment =sent.naiveBayesSentimentPredict(test_data)
 
+    polarity_scores = sent.valenceSentiment(test_text_unsupervised)
+
+    log.info("Logging polarity scores "+  " ".join(polarity_scores ) )
     log.info("done")
-
-    # # Get the movie sentiment data and implement in test
-    # X_train, X_test, y_train, y_test = train_test_split(text_tf, data['Sentiment'], test_size=0.3, random_state=123)
-    # from sklearn.naive_bayes import MultinomialNB
-    # from sklearn import metrics
-    #
-    # # Model Generation Using Multinomial Naive Bayes
-    # clf = MultinomialNB().fit(X_train, y_train)
-    # predicted = clf.predict(X_test)
-    # log.info("MultinomialNB Accuracy:", metrics.accuracy_score(y_test, predicted))

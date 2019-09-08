@@ -380,9 +380,11 @@ if __name__ == '__main__':
     print("done")
     ## Larger Test
 
-    do_process = False
+    do_process = True
 
     if do_process:
+        import nltk
+        nltk.download('wordnet')
         medical_df = get_transcription_data()
         docs = numpy.array(medical_df['transcription'])
         # Use LDA to preprocess - later make a base class and refactor.

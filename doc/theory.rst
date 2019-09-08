@@ -27,11 +27,35 @@ Lemmatization is related to stemming, differing in that lemmatization is able to
 better -> good
 It should be easy to see why the implementation of a stemmer would be the less difficult feat of the two. The goal of both stemming and lemmatization is to reduce inflectional forms and sometimes derivationally related forms of a word to a common base form. Stemming usually refers to a crude heuristic process that chops off the ends of words in the hope of achieving this goal correctly most of the time, and often includes the removal of derivational affixes.  Lemmatization usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma
 
+
+A good starting point is [Charniak1997]_.
+
+.. [Charniak1997] Statistical Language Learning Charniak E Language (1997) 73(3) 588
+
+
+Topic Modeling : LDA CTM
+--------------------------------------------------
+
+Topic modeling is about reducing a set of documents (a corpus) to a representation as a mixture of topics.  Each topic is a distribution over the set of words in the corpus. There are two main Bayesian topic models LDA (Latent Dirichlet Allocation) [BleiEtAl2005]_ and CTM (Correlated Topic Model) [BLeiEtAl2003]_  These are Bayesian models that use a variational formulation to fit the models. A limitation of LDA is the inability to model topic correlation.  One would expect that topics are not independent. The correlated topic model allows for the topic proportions to exhibit correlations.  This is achieved via a transformation of logistic normal distribution.  There are additional complications since we loose conjugacy in the prior. LDA is more widely used but we aim to incorporate CTM in this library. We currently use the implementation of gensim for LDA and an implementation of CTM from
+
+`https://github.com/lewer/gensim/tree/develop/gensim/models`
+
+.. [BleiEtAl2005] Blei, D. M., & Lafferty, J. D. (2005). Correlated topic models. In Advances in Neural Information Processing Systems (pp. 147–154).
+
+.. [BLeiEtAl2003] Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). Latent Dirichlet allocation. Journal of Machine Learning Research, 3(4–5), 993–1022
+
+
+Topic Modeling : LSI
+--------------------------------------------------
+
+Before LDA and CTM there were numerical linear algebra based methods of calculating document similarity. LSI (Latent Semantic Indexing) starts with vector representations of documents  and uses the SVD (singular value decomposition) to decompose the corpus matrix A into a term-concept matrix U, a singular value matrix S, and a concept-document matrix V
+
 .. math::
-    \int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}
+A = USV'
 
-And refer to a paper [author2019]_.
+Vector representations A_i are usually either word frequencies - called bag of words (BOW) - or adjusted word frequencies (TF-IDF) that account for overall corpus word counts. The TF-IDF representation aims to account for how important a word is to a document relative to its overall appearance in a corpus of documents basically adjusting for the fact that some words appear more frequently and provide less information in the topics.
 
-.. [author2019] first a., second a., cheese b. (2019). The title of their 
-                paper. Journal of papers, *15*: 1023-1049.
+NNMF (non-negative matrix factorization ) can also be used to find a low dimensional representation for documents.  A we can be factored to W and H, such that A= WH. Where
+W  are basis vectors representing the topics and H is a coefficient matrix representing the membership weights for the topics in each document.
 
+We have exposed all of these topic models in the toolbox but focus mainly on LDA and CTM in the workflows.

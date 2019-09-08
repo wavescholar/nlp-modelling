@@ -1,8 +1,10 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 
 import nltk
 from nltk.corpus import wordnet
+
+
 #
 # Universal Part-of-Speech Tagset
 #
@@ -21,14 +23,41 @@ from nltk.corpus import wordnet
 # X	other	ersatz, esprit, dunno, gr8, univeristy
 
 class POStag:
-    def __init__(self):
-        print("init POSTag")
+    def __init__(self, text, DEBUG=False):
+        self.text = text
+        self.dict = dict()
+        self.DEBUG = DEBUG
 
-    def get_nltk_POS(word):
+    def get_nltk_POS(self, word):
         tag = nltk.pos_tag([word])[0][1][0].upper()
+        if self.DEBUG:
+            print(tag)
         pos_dict = {"J": wordnet.ADJ,
                     "N": wordnet.NOUN,
                     "V": wordnet.VERB,
                     "R": wordnet.ADV}
         return pos_dict.get(tag, wordnet.NOUN)
 
+    def transform(self):
+        for word in self.text.split():
+            tag = self.get_nltk_POS(word)
+            self.dict[word] = tag
+        return self.dict
+
+
+if __name__ == '__main__':
+    # This will be the unit test
+
+    test_text = u"It was now reading the sign that said Privet Drive — no, looking at the sign; " \
+                "cats couldn't read maps or signs.He didn't see the owls swooping past in broad daylight, " \
+                "though people down in the street did; they pointed and gazed open-mouthed as owl after " \
+                "owl sped overhead"
+
+    pos = POStag(test_text, DEBUG=True)
+
+    dict = pos.transform()
+
+    for k in dict:
+        print(k, dict[k])
+
+    print("Done")
