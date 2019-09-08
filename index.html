@@ -170,6 +170,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="theory.html">NLP Theory</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="theory.html#pre-processing-steps">Pre-processing steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theory.html#topic-modeling-lda-ctm">Topic Modeling : LDA CTM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theory.html#topic-modeling-lsi">Topic Modeling : LSI</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">pytma Gallery</a><ul>
@@ -250,6 +252,43 @@
 </div>
 <div class="section" id="module-pytma.Parse">
 <span id="pytma-parse"></span><h1>pytma Parse<a class="headerlink" href="#module-pytma.Parse" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pytma.Parse.ParseText">
+<em class="property">class </em><code class="sig-prename descclassname">pytma.Parse.</code><code class="sig-name descname">ParseText</code><span class="sig-paren">(</span><em class="sig-param">text</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Parse.ParseText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for parsing text.  Uses spacey.</p>
+<dl class="method">
+<dt id="pytma.Parse.ParseText.chart_parse">
+<code class="sig-name descname">chart_parse</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Parse.ParseText.chart_parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Chart parse
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytma.Parse.ParseText.dependency_parse">
+<code class="sig-name descname">dependency_parse</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Parse.ParseText.dependency_parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dependency parser : Analyzes the grammatical structure of a sentence,
+establishing relationships between “head” words and words which modify those heads
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytma.Parse.ParseText.display_parse">
+<code class="sig-name descname">display_parse</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Parse.ParseText.display_parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>sets up web page with parse diagram
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytma.Parse.ParseText.noun_chunks">
+<code class="sig-name descname">noun_chunks</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Parse.ParseText.noun_chunks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Looks for n-gram noun phrases
+Think of noun chunks as a noun plus the words describing the noun –
+for example, “the lavish green grass” or “the world’s largest tech fund”
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-pytma.POSTag">
 <span id="pytma-postag"></span><h1>pytma POSTag<a class="headerlink" href="#module-pytma.POSTag" title="Permalink to this headline">¶</a></h1>

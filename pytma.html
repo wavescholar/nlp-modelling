@@ -241,15 +241,37 @@
 <dt id="pytma.Parse.ParseText">
 <em class="property">class </em><code class="sig-prename descclassname">pytma.Parse.</code><code class="sig-name descname">ParseText</code><span class="sig-paren">(</span><em class="sig-param">text</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Parse.ParseText" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for parsing text.  Uses spacey.</p>
 <dl class="method">
 <dt id="pytma.Parse.ParseText.chart_parse">
 <code class="sig-name descname">chart_parse</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Parse.ParseText.chart_parse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Chart parse
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytma.Parse.ParseText.dependency_parse">
+<code class="sig-name descname">dependency_parse</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Parse.ParseText.dependency_parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dependency parser : Analyzes the grammatical structure of a sentence,
+establishing relationships between “head” words and words which modify those heads
+:return:</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="pytma.Parse.ParseText.display_parse">
 <code class="sig-name descname">display_parse</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Parse.ParseText.display_parse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>sets up web page with parse diagram
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytma.Parse.ParseText.noun_chunks">
+<code class="sig-name descname">noun_chunks</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Parse.ParseText.noun_chunks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Looks for n-gram noun phrases
+Think of noun chunks as a noun plus the words describing the noun –
+for example, “the lavish green grass” or “the world’s largest tech fund”
+:return:</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -258,11 +280,16 @@
 <span id="pytma-postag-module"></span><h2>pytma.POSTag module<a class="headerlink" href="#module-pytma.POSTag" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="pytma.POSTag.POStag">
-<em class="property">class </em><code class="sig-prename descclassname">pytma.POSTag.</code><code class="sig-name descname">POStag</code><a class="headerlink" href="#pytma.POSTag.POStag" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pytma.POSTag.</code><code class="sig-name descname">POStag</code><span class="sig-paren">(</span><em class="sig-param">text</em>, <em class="sig-param">DEBUG=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.POSTag.POStag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="method">
 <dt id="pytma.POSTag.POStag.get_nltk_POS">
-<code class="sig-name descname">get_nltk_POS</code><span class="sig-paren">(</span><em class="sig-param">word</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.POSTag.POStag.get_nltk_POS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_nltk_POS</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">word</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.POSTag.POStag.get_nltk_POS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pytma.POSTag.POStag.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.POSTag.POStag.transform" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -436,9 +463,10 @@ evaluated at all points in <cite>x</cite>.</p>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Sentiment analyzer.  Supervised via NaiveBayes or unsupervised via Valence method.</p>
 <dl class="method">
-<dt id="pytma.Sentiment.Sentiment.naiveBayesSentiment">
-<code class="sig-name descname">naiveBayesSentiment</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">text</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Sentiment.Sentiment.naiveBayesSentiment" title="Permalink to this definition">¶</a></dt>
-<dd><p>Supervised sentiment analysis.</p>
+<dt id="pytma.Sentiment.Sentiment.naiveBayesSentimentFit">
+<code class="sig-name descname">naiveBayesSentimentFit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">text</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Sentiment.Sentiment.naiveBayesSentimentFit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supervised sentiment analysis - uses nltk to fit Naive Bayes .
+Call naiveBayesSentimentPredict to predict  using the latest fit model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>text</strong> – </p>
@@ -450,6 +478,20 @@ evaluated at all points in <cite>x</cite>.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="pytma.Sentiment.Sentiment.naiveBayesSentimentPredict">
+<code class="sig-name descname">naiveBayesSentimentPredict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">text</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Sentiment.Sentiment.naiveBayesSentimentPredict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts sentiment.  Call naiveBayesSentimentFit on a corpus first otherwise
+an error will be thrown.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – </p>
+</dd>
+<dt class="field-even">Return predicted sentiment</dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="pytma.Sentiment.Sentiment.valenceSentiment">
 <code class="sig-name descname">valenceSentiment</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">text</em><span class="sig-paren">)</span><a class="headerlink" href="#pytma.Sentiment.Sentiment.valenceSentiment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unsupervised sentiment analysis.</p>
@@ -457,9 +499,8 @@ evaluated at all points in <cite>x</cite>.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>text</strong> – </p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
+<dt class="field-even">Return sentiment polarity scores</dt>
+<dd class="field-even"><p></p></dd>
 </dl>
 </dd></dl>
 
