@@ -8,6 +8,7 @@ class TestLemmatize(unittest.TestCase):
     def test_Lemmatize(self):
         import nltk
         nltk.download('punkt')
+        nltk.download('stopwords')
 
         test_text = "This is the test text. Documents made up of words and/or phrases. \
             The model consists of two tables; the first table is the probability of selecting  \
