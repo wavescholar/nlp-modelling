@@ -4,8 +4,8 @@ import os.path
 
 # Format expected by setup.py and doc/source/conf.py: string of form "X.Y.Z"
 _version_major = 0
-_version_minor = 1
-_version_micro = ''  # use '' for first of series, number for 1 and above
+_version_minor = 0
+_version_micro = 2  # use '' for first of series, number for 1 and above
 _version_extra = 'dev'
 # _version_extra = ''  # Uncomment this for full releases
 
@@ -18,7 +18,7 @@ if _version_extra:
 
 __version__ = '.'.join(map(str, _ver))
 
-CLASSIFIERS = ["Development Status :: 3 - Alpha",
+CLASSIFIERS = ["Development Status :: 2 - Pre-Alpha",
                "Environment :: Console",
                "Intended Audience :: Science/Research",
                "License :: OSI Approved :: MIT License",
@@ -67,4 +67,5 @@ MINOR = _version_minor
 MICRO = _version_micro
 VERSION = __version__
 PACKAGE_DATA = {'pytma': [os.path.join('data', '*')]}
-REQUIRES = ["numpy"]
+REQUIRES = ["numpy", "scikit-learn", "scipy", "matplotlib", "pandas", "nltk", "gensim", "spacy", "pyLDAvis", "pystan",
+            "wget", "stanfordnlp"]

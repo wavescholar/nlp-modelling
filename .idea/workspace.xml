@@ -4,6 +4,22 @@
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/theory.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/theory.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/AnnaKarenina.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Boyhood.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/CTMModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/CTMModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Childhood.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/DataSources.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/DataSources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Featurize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Featurize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Lemmatize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Lemmatize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/POSTag.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/POSTag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Parse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Sentiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Sentiment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/TheCossacks.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/TheKreutzerSonata.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/WarAndPeace.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Youth.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/tests/test_StanfordNLP.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/tests/test_StanfordNLP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/version.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +72,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -72,7 +89,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pytma/CTMModel.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pytma/Parse.py" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -96,8 +113,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.CTMModel">
-    <configuration name="CTMModel" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest in test_Parse.py">
+    <configuration name="POSTag" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="topic-modelling" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -110,9 +127,53 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytma/CTMModel.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytma/POSTag.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="POSTag" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytma/POSTag.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Parse" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytma/Parse.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -135,6 +196,28 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/PredictionExample.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Sentiment" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytma/Sentiment.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -201,6 +284,54 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in test_Lemmatize.py" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma/tests" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/pytma/tests/test_Lemmatize.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_Parse.py" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma/tests/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/pytma/tests/test_Parse.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_Sentiment.py" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma/tests/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/pytma/tests/test_Sentiment.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest_gensim" type="tests" factoryName="py.test">
       <module name="topic-modelling" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -218,9 +349,14 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.CTMModel" />
+      <item itemvalue="Python.Parse" />
+      <item itemvalue="Python.Sentiment" />
+      <item itemvalue="Python.POSTag" />
       <item itemvalue="Python.PredictionExample" />
       <item itemvalue="Python.pytma.topicmodel" />
+      <item itemvalue="Python tests.pytest in test_Sentiment.py" />
+      <item itemvalue="Python tests.pytest in test_Parse.py" />
+      <item itemvalue="Python tests.pytest in test_Lemmatize.py" />
       <item itemvalue="Python tests.pytest in test_Featureize.py" />
       <item itemvalue="Python tests.pytest_gensim" />
     </list>
@@ -285,7 +421,9 @@
       <workItem from="1566934044479" duration="7000" />
       <workItem from="1567448801252" duration="589000" />
       <workItem from="1567464037234" duration="2175000" />
-      <workItem from="1567784779090" duration="7125000" />
+      <workItem from="1567784779090" duration="12786000" />
+      <workItem from="1567898020385" duration="6594000" />
+      <workItem from="1567960550432" duration="3956000" />
     </task>
     <servers />
   </component>
@@ -342,16 +480,6 @@
           <url>file://$PROJECT_DIR$/pytma/StopWord.py</url>
           <line>73</line>
           <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pytma/Parse.py</url>
-          <line>28</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pytma/Featurize.py</url>
-          <line>114</line>
-          <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
@@ -430,7 +558,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/CTMModel.py</url>
-          <line>416</line>
+          <line>418</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -445,7 +573,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/CTMModel.py</url>
-          <line>414</line>
+          <line>416</line>
           <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -469,9 +597,44 @@
           <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pytma/CTMModel.py</url>
-          <line>377</line>
+          <url>file://$PROJECT_DIR$/pytma/tests/test_Lemmatize.py</url>
+          <line>23</line>
           <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/tests/test_Lemmatize.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="160" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/Lemmatize.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/POSTag.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/tests/test_Sentiment.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/tests/test_Sentiment.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/Parse.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="177" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/Parse.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="180" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -484,7 +647,14 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/nlp_modelling$POSTag.coverage" NAME="POSTag Coverage Results" MODIFIED="1567902426798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$Sentiment.coverage" NAME="Sentiment Coverage Results" MODIFIED="1567961568378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Sentiment_py.coverage" NAME="pytest in test_Sentiment.py Coverage Results" MODIFIED="1567961872837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Lemmatize_py.coverage" NAME="pytest in test_Lemmatize.py Coverage Results" MODIFIED="1567898944097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1566866308529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytma_topicmodel.coverage" NAME="pytma.topicmodel Coverage Results" MODIFIED="1567901553943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Parse_py.coverage" NAME="pytest in test_Parse.py Coverage Results" MODIFIED="1567964490084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
     <SUITE FILE_PATH="coverage/topic_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1563843963292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$Parse.coverage" NAME="Parse Coverage Results" MODIFIED="1567964341208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
   </component>
 </project>

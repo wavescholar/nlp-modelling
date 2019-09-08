@@ -66,7 +66,7 @@ class Lemmatize:
 
     def porter_stemmer(self,text):
         stem = PorterStemmer()
-        split_text = test_text.split()
+        split_text = text.split()
         stemmed_words=list()
         for word in split_text:
             stemmed =stem.stem(word)

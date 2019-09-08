@@ -96,6 +96,10 @@ def download_tolstoy_novels(location='data/cache/'):
 
 if __name__ == '__main__':
 
-    download_tolstoy_novels()
+    from pytma.tests.test_DataSources import test_novel_data, test_medical_data
 
+    test_novel_data()
+
+    test_medical_data()
+    
     log.info("done")

@@ -48,12 +48,12 @@ Topic modeling is about reducing a set of documents (a corpus) to a representati
 Topic Modeling : LSI
 --------------------------------------------------
 
-Before LDA and CTM there were numerical linear algebra based methods of calculating document similarity. LSI (Latent Semantic Indexing) starts with vector representations of documents  and use the SVD (singular value decomposition) to decompose the corpus matrix A into a term-concept matrix U, a singular value matrix S, and a concept-document matrix V
+Before LDA and CTM there were numerical linear algebra based methods of calculating document similarity. LSI (Latent Semantic Indexing) starts with vector representations of documents  and uses the SVD (singular value decomposition) to decompose the corpus matrix A into a term-concept matrix U, a singular value matrix S, and a concept-document matrix V
 
 .. math::
 A = USV'
 
-Vector representations A are usually either a word frequencies - called bag of words (BOW) - or adjusted word frequencies (TF-IDF) that account for overall corpus word counts. The TF-IDF representation aims to account for how important a word is to a document relative to its overall appearance in a corpus of documents basically adjusting for the fact that some words appear more frequently and provide less information in the topics.
+Vector representations A_i are usually either word frequencies - called bag of words (BOW) - or adjusted word frequencies (TF-IDF) that account for overall corpus word counts. The TF-IDF representation aims to account for how important a word is to a document relative to its overall appearance in a corpus of documents basically adjusting for the fact that some words appear more frequently and provide less information in the topics.
 
 NNMF (non-negative matrix factorization ) can also be used to find a low dimensional representation for documents.  A we can be factored to W and H, such that A= WH. Where
 W  are basis vectors representing the topics and H is a coefficient matrix representing the membership weights for the topics in each document.
