@@ -355,9 +355,7 @@ class CTMModel(interfaces.TransformationABC):
 
 
 if __name__ == '__main__':
-    # This will be the unit test
 
-    # set up vars used in testing ("Deerwester" from the web tutorial)
     common_texts = [
         ['human', 'interface', 'computer'],
         ['survey', 'user', 'computer', 'system', 'response', 'time'],

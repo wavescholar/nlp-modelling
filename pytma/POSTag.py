@@ -46,18 +46,6 @@ class POStag:
 
 
 if __name__ == '__main__':
-    # This will be the unit test
+    from pytma.tests.test_POSTag import TestPOSTag
 
-    test_text = u"It was now reading the sign that said Privet Drive — no, looking at the sign; " \
-                "cats couldn't read maps or signs.He didn't see the owls swooping past in broad daylight, " \
-                "though people down in the street did; they pointed and gazed open-mouthed as owl after " \
-                "owl sped overhead"
-
-    pos = POStag(test_text, DEBUG=True)
-
-    dict = pos.transform()
-
-    for k in dict:
-        print(k, dict[k])
-
-    print("Done")
+    TestPOSTag.test_pos_tag()

@@ -11,7 +11,6 @@ import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
 from numpy import array
-
 from pytma.DataSources import get_transcription_data
 from pytma.Utility import log
 
@@ -50,10 +49,10 @@ class LDAAnalysis:
         lemmatizer = WordNetLemmatizer()
         self.docs = [[lemmatizer.lemmatize(token) for token in doc] for doc in self.docs]
 
-    def fit(self):
+    def fit(self,dictionary_filter_extremes_no_below=10, dictionary_filter_extremes_no_above=0.2):
         # Perform function on our document
         self.docs_preprocessor()
-        # Create Biagram & Trigram Models
+        # Create Bigram & Trigram Models
         from gensim.models import Phrases
 
         # Add bigrams and trigrams to docs,minimum count 10 means only that appear 10 times or more.
@@ -72,7 +71,7 @@ class LDAAnalysis:
         # Remove rare & common tokens
         # Create a dictionary representation of the documents.
         self.dictionary = Dictionary(self.docs)
-        self.dictionary.filter_extremes(no_below=10, no_above=0.2)
+        self.dictionary.filter_extremes(no_below=dictionary_filter_extremes_no_below, no_above=dictionary_filter_extremes_no_above)
         # Create dictionary and corpus required for Topic Modeling
         self.corpus = [self.dictionary.doc2bow(doc) for doc in self.docs]
         log.info('Number of unique tokens: %d' % len(self.dictionary))
@@ -183,8 +182,10 @@ if __name__ == '__main__':
     # This will be the unit test
 
     medical_df = get_transcription_data()
-
-    docs = array(medical_df['transcription'])
+    print(type(medical_df))
+    text = medical_df['transcription']
+    print(type(text))
+    docs = array(text)
     print(type(docs))
     # =============================
     # LDA

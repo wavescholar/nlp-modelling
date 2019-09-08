@@ -9,6 +9,10 @@ from scipy.special import erf
 import os
 __all__ = [ "Model", "Fit", "opt_err_func", "transform_data", "cumgauss"]
 
+#TODO remove this
+
+
+
 #==========Example code ===================
 
 def transform_data(data):
