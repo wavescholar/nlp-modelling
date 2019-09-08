@@ -3,22 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/theory.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/theory.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/AnnaKarenina.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Boyhood.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/CTMModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/CTMModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Childhood.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/DataSources.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/DataSources.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Featurize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Featurize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Lemmatize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Lemmatize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/POSTag.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/POSTag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Parse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Sentiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Sentiment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/TheCossacks.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/TheKreutzerSonata.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/WarAndPeace.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Youth.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/tests/test_StanfordNLP.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/tests/test_StanfordNLP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytma/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/version.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -423,7 +407,7 @@
       <workItem from="1567464037234" duration="2175000" />
       <workItem from="1567784779090" duration="12786000" />
       <workItem from="1567898020385" duration="6594000" />
-      <workItem from="1567960550432" duration="3956000" />
+      <workItem from="1567960550432" duration="5121000" />
     </task>
     <servers />
   </component>

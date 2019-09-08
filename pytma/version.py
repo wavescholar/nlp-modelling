@@ -67,5 +67,4 @@ MINOR = _version_minor
 MICRO = _version_micro
 VERSION = __version__
 PACKAGE_DATA = {'pytma': [os.path.join('data', '*')]}
-REQUIRES = ["numpy", "scikit-learn", "scipy", "matplotlib", "pandas", "nltk", "gensim", "spacy", "pyLDAvis", "pystan",
-            "wget", "stanfordnlp"]
+REQUIRES = ["numpy"]
