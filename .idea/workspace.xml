@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/CTMModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/CTMModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/NamedEntity.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/NamedEntity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/POSTag.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/POSTag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Preprocess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/TopicModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/TopicModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/tests/test_LDA.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/tests/test_LDA.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -461,7 +456,7 @@
       <workItem from="1567784779090" duration="12786000" />
       <workItem from="1567898020385" duration="6594000" />
       <workItem from="1567960550432" duration="8112000" />
-      <workItem from="1567982420103" duration="3892000" />
+      <workItem from="1567982420103" duration="4665000" />
     </task>
     <servers />
   </component>
@@ -666,7 +661,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/tests/test_LDA.py</url>
-          <line>35</line>
+          <line>32</line>
           <option name="timeStamp" value="182" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -688,6 +683,11 @@
           <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
           <line>72</line>
           <option name="timeStamp" value="189" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="191" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -8,6 +8,10 @@ from pytma.TopicModel import LDAAnalysis
 
 class TestLDA(unittest.TestCase):
     def test_lda(self):
+        # Get the nltk data we need
+        datasets = ['stopwords', 'punkt', 'averaged_perceptron_tagger', 'wordnet']
+        Utility.nltk_init(datasets)
+
         common_texts = [
             ['human', 'interface', 'computer'],
             ['survey', 'user', 'computer', 'system', 'response', 'time'],
@@ -19,13 +23,6 @@ class TestLDA(unittest.TestCase):
             ['graph', 'minors', 'trees'],
             ['graph', 'minors', 'survey']
         ]
-
-        common_dictionary = Dictionary(common_texts)
-        common_corpus = [common_dictionary.doc2bow(text) for text in common_texts]
-        # This setp generates the id2token
-        for k, v in common_dictionary.items():
-            pass
-        id2word = common_dictionary.id2token
 
         docs = list()
         for doc in common_texts:
