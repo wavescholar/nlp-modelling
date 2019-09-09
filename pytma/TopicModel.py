@@ -4,6 +4,7 @@
 from gensim.models.coherencemodel import CoherenceModel
 from gensim.models.ldamodel import LdaModel
 from gensim.corpora.dictionary import Dictionary
+from gensim.models import Phrases
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize import RegexpTokenizer
 import matplotlib.pyplot as plt
@@ -13,7 +14,6 @@ from sklearn.decomposition import NMF
 from numpy import array
 from pytma.DataSources import get_transcription_data
 from pytma.Utility import log
-
 
 class LDAAnalysis:
     def __init__(self, docs, num_topics=5, chunksize=500, passes=20, iterations=400, eval_every=1):
@@ -53,7 +53,6 @@ class LDAAnalysis:
         # Perform function on our document
         self.docs_preprocessor()
         # Create Bigram & Trigram Models
-        from gensim.models import Phrases
 
         # Add bigrams and trigrams to docs,minimum count 10 means only that appear 10 times or more.
         bigram = Phrases(self.docs, min_count=10)

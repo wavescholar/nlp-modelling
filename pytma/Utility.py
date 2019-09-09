@@ -99,14 +99,7 @@ Global Logger for pytma
 log = Logger('.', "pytma")
 
 if __name__ == '__main__':
-    log = Logger('.', "pytma")
 
-    log.info("information")
+    from pytma.tests.test_util import TestUtil
 
-    log.debug("debugging info")
-
-    log.warning("warning")
-
-    log.error("error")
-
-    log.critical("critical message")
+    TestUtil.test_util()
