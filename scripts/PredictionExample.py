@@ -187,6 +187,13 @@ results = results.append({'Classifier': 'RandomForestClassifier',
                           'mean_Recall': r,
                           'mean_F1-score': f}, ignore_index=True)
 
+
+p, r, f = run_classifier(lda_corpus, rfc, 5)
+results = results.append({'Classifier': 'RandomForestClassifier',
+                          'Corpus type': 'LDA Term Topics',
+                          'mean_Precision': p,
+                          'mean_Recall': r,
+                          'mean_F1-score': f}, ignore_index=True)
 log.info(results)
 
 results.to_csv('doc_classification_results.txt', sep='\t')

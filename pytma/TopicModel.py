@@ -156,6 +156,7 @@ class LDAAnalysis:
 
 
 class NNMFTopicAnalysis:
+
     def __init__(self, docs, num_samples=400, num_features=1000, num_topics=10, top_words=20):
         self.samples = num_samples
         self.num_features = num_features
@@ -206,3 +207,5 @@ if __name__ == '__main__':
     # NNMF
     nnmf = NNMFTopicAnalysis(docs=docs)
     nnmf.fit()
+
+    print('Done')
