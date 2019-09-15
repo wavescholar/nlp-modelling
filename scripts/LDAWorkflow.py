@@ -85,7 +85,7 @@ if __name__ == '__main__':
     if do_process:
         import multiprocessing
 
-        pool = multiprocessing.Pool()
+        pool = multiprocessing.Pool(multiprocessing.cpu_count())
 
         processed = medical_df["transcription"].pool.map(preprocess)
 

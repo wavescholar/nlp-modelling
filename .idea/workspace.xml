@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/LDAWorkflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/LDAWorkflow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -475,7 +474,7 @@
       <workItem from="1567982420103" duration="5039000" />
       <workItem from="1568069936216" duration="4715000" />
       <workItem from="1568310396308" duration="1036000" />
-      <workItem from="1568567257664" duration="1414000" />
+      <workItem from="1568567257664" duration="1667000" />
     </task>
     <task id="LOCAL-00001" summary="dev">
       <created>1568567543522</created>
@@ -491,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568569207662</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="dev">
+      <created>1568569461059</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568569461059</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
