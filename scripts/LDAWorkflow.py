@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+from os import path
 
 import pandas as pd
 import re
@@ -76,15 +76,19 @@ if __name__ == '__main__':
         lemmatized = [lemmatizer.lemmatize(w, get_nltk_POS(w)) for w in stopword_processed]
         return lemmatized
 
+    pickle_filename="../pytma/data/cache/LDAWorkflow.preprocesed.pkl"
+    if path.exists(pickle_filename):
+        do_process = False
+    else:
+        do_process = True
 
-    do_process = False
     if do_process:
         processed = medical_df["transcription"].map(preprocess)
-        pickle_processed = open("../pytma/data/cache/LDAWorkflow.preprocesed.pkl", "wb")
+        pickle_processed = open(pickle_filename, "wb")
         pickle.dump(processed, pickle_processed)
         pickle_processed.close()
     else:
-        with open("../pytma/data/cache/LDAWorkflow.preprocesed.pkl", 'rb') as pickle_file:
+        with open(pickle_filename, 'rb') as pickle_file:
             processed = pickle.load(pickle_file)
 
     dictionary = gensim.corpora.Dictionary(processed)  # dictionary gives unique ids to the words for easier processing
@@ -163,7 +167,7 @@ if __name__ == '__main__':
 
     print("=" * 20)
 
-    pickle_lda = open("..../pytma/data/cache/lda_model_15.pkl", "wb")
+    pickle_lda = open("../../pytma/data/cache/lda_model_15.pkl", "wb")
     pickle.dump(lda_model, pickle_lda)
     pickle_lda.close()
 
