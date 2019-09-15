@@ -83,7 +83,12 @@ if __name__ == '__main__':
         do_process = True
 
     if do_process:
-        processed = medical_df["transcription"].map(preprocess)
+        import multiprocessing
+
+        pool = multiprocessing.Pool()
+
+        processed = medical_df["transcription"].pool.map(preprocess)
+
         pickle_processed = open(pickle_filename, "wb")
         pickle.dump(processed, pickle_processed)
         pickle_processed.close()
