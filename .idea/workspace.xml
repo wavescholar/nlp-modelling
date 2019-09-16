@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/Utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Utility.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/LDAWorkflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/LDAWorkflow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,6 +68,9 @@
     </expand>
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="nlp-modelling" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -94,7 +99,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pytma/tests/test_Tokenizer.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pytma/TopicModel.py" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -118,7 +123,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_LDA.py">
+  <component name="RunManager" selected="Python.LDAWorkflow">
+    <configuration name="LDAWorkflow" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/LDAWorkflow.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="POSTag" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="topic-modelling" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -223,6 +250,28 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytma/Sentiment.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TopicModel" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytma/TopicModel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -402,6 +451,8 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.LDAWorkflow" />
+      <item itemvalue="Python.TopicModel" />
       <item itemvalue="Python.Parse" />
       <item itemvalue="Python.Sentiment" />
       <item itemvalue="Python.POSTag" />
@@ -474,7 +525,7 @@
       <workItem from="1567982420103" duration="5039000" />
       <workItem from="1568069936216" duration="4715000" />
       <workItem from="1568310396308" duration="1036000" />
-      <workItem from="1568567257664" duration="1667000" />
+      <workItem from="1568567257664" duration="6983000" />
     </task>
     <task id="LOCAL-00001" summary="dev">
       <created>1568567543522</created>
@@ -497,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568569461059</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="dev">
+      <created>1568569710472</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568569710472</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +583,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>181</line>
+          <line>191</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -555,7 +613,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>98</line>
+          <line>109</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -695,11 +753,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
-          <line>183</line>
-          <option name="timeStamp" value="185" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
           <line>167</line>
           <option name="timeStamp" value="194" />
         </line-breakpoint>
@@ -723,21 +776,48 @@
           <line>39</line>
           <option name="timeStamp" value="198" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
+          <line>102</line>
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
+          <line>188</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
+          <line>121</line>
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
+          <line>100</line>
+          <option name="timeStamp" value="216" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/nlp_modelling$POSTag.coverage" NAME="POSTag Coverage Results" MODIFIED="1567902426798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
     <SUITE FILE_PATH="coverage/nlp_modelling$Sentiment.coverage" NAME="Sentiment Coverage Results" MODIFIED="1567961568378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Sentiment_py.coverage" NAME="pytest in test_Sentiment.py Coverage Results" MODIFIED="1567961872837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
-    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Tokenizer_py.coverage" NAME="pytest in test_Tokenizer.py Coverage Results" MODIFIED="1568070511109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Lemmatize_py.coverage" NAME="pytest in test_Lemmatize.py Coverage Results" MODIFIED="1567966997542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1566866308529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests" />
-    <SUITE FILE_PATH="coverage/nlp_modelling$pytma_topicmodel.coverage" NAME="pytma.topicmodel Coverage Results" MODIFIED="1568072852498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
-    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Parse_py.coverage" NAME="pytest in test_Parse.py Coverage Results" MODIFIED="1567964490084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$LDAWorkflow.coverage" NAME="LDAWorkflow Coverage Results" MODIFIED="1568591911974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_LDA_py.coverage" NAME="pytest in test_LDA.py Coverage Results" MODIFIED="1568074016397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_POSTag_py.coverage" NAME="pytest in test_POSTag.py Coverage Results" MODIFIED="1567983340080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$POSTag.coverage" NAME="POSTag Coverage Results" MODIFIED="1567902426798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Tokenizer_py.coverage" NAME="pytest in test_Tokenizer.py Coverage Results" MODIFIED="1568070511109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytma_topicmodel.coverage" NAME="pytma.topicmodel Coverage Results" MODIFIED="1568072852498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$TopicModel.coverage" NAME="TopicModel Coverage Results" MODIFIED="1568587783345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Parse_py.coverage" NAME="pytest in test_Parse.py Coverage Results" MODIFIED="1567964490084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
     <SUITE FILE_PATH="coverage/topic_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1563843963292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/nlp_modelling$Parse.coverage" NAME="Parse Coverage Results" MODIFIED="1567964341208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
-    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_POSTag_py.coverage" NAME="pytest in test_POSTag.py Coverage Results" MODIFIED="1567983340080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
   </component>
 </project>

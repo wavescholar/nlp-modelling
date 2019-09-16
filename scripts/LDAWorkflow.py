@@ -16,8 +16,11 @@ import spacy
 import pyLDAvis
 import pyLDAvis.gensim as gensimvis
 import pickle
+import multiprocessing
+import numpy as np
+from multiprocessing import cpu_count
 
-#This script is going to go away - most of the fuctionality has been ported to pytma
+#Reference script for LDA
 
 if __name__ == '__main__':
 
@@ -42,52 +45,60 @@ if __name__ == '__main__':
 
         return pos_dict.get(tag, wordnet.NOUN)
 
+
     def lemmatize_nltk_with_POS(text):
         lemmatizer = WordNetLemmatizer()
         result = [lemmatizer.lemmatize(w, get_nltk_POS(w)) for w in nltk.word_tokenize(text)]
         return result
 
-
     word_tokens = token.tokenize(medical_df["transcription"][0])
     stopword_processed = [w for w in word_tokens if not w in stop_words]
     lemmatized_nltk = lemmatize_nltk_with_POS(" ".join(stopword_processed))
-
 
     def lemmatize_spacy(text):
         nlp = spacy.load('en', disable=['parser', 'ner'])
         result = nlp(text)
         return result
 
-
     lemmatized_spacey = lemmatize_spacy(medical_df["transcription"][0])
 
-    print(medical_df["transcription"][0])
     print(" ".join([token.lemma_ for token in lemmatized_spacey]))
 
 
     # Applying the pre-processing to entire transcription
-    def preprocess(text):
+    def preprocess(text_chunk):
         lemmatizer = WordNetLemmatizer()
-        skip_words_processed = skip_words.sub("", text)
-        skip_x_processed = skip_x.sub('', skip_words_processed)
-        word_tokens = token.tokenize(skip_x_processed)
-        to_lower = [w.lower() if not w.isupper() else w for w in word_tokens]
-        stopword_processed = [w for w in to_lower if not w.lower() in stop_words and len(w) > 1]
-        lemmatized = [lemmatizer.lemmatize(w, get_nltk_POS(w)) for w in stopword_processed]
-        return lemmatized
+        lemmatized_chunk = pd.DataFrame(columns=['lemmatized'])
+        for text in text_chunk:
+            skip_words_processed = skip_words.sub("", text)
+            skip_x_processed = skip_x.sub('', skip_words_processed)
+            word_tokens = token.tokenize(skip_x_processed)
+            to_lower = [w.lower() if not w.isupper() else w for w in word_tokens]
+            stopword_processed = [w for w in to_lower if not w.lower() in stop_words and len(w) > 1]
+            lemmatized = [lemmatizer.lemmatize(w, get_nltk_POS(w)) for w in stopword_processed]
+            lemmatized_chunk = lemmatized_chunk.append({'lemmatized': " ".join(lemmatized)}, ignore_index=True)
+        return lemmatized_chunk
 
-    pickle_filename="../pytma/data/cache/LDAWorkflow.preprocesed.pkl"
-    if path.exists(pickle_filename):
+    pickle_filename = "../pytma/data/cache/LDAWorkflow.preprocesed.pkl"
+    if path.exists(pickle_filename) is True:
         do_process = False
     else:
         do_process = True
 
     if do_process:
-        import multiprocessing
+        cores = cpu_count()
+        partitions = cores
 
-        pool = multiprocessing.Pool(multiprocessing.cpu_count())
 
-        processed = medical_df["transcription"].pool.map(preprocess)
+        def parallelize(data, func):
+            data_split = np.array_split(data, partitions)
+            pool = multiprocessing.Pool(cores)
+            data = pd.concat(pool.map(func, data_split))
+            pool.close()
+            pool.join()
+            return data
+
+        processed = parallelize(medical_df["transcription"], preprocess)
 
         pickle_processed = open(pickle_filename, "wb")
         pickle.dump(processed, pickle_processed)
@@ -96,7 +107,7 @@ if __name__ == '__main__':
         with open(pickle_filename, 'rb') as pickle_file:
             processed = pickle.load(pickle_file)
 
-    dictionary = gensim.corpora.Dictionary(processed)  # dictionary gives unique ids to the words for easier processing
+    dictionary = gensim.corpora.Dictionary(np.array(processed))
     print(type(dictionary))
 
     count = 0
@@ -148,7 +159,6 @@ if __name__ == '__main__':
             word_dict['Topic # ' + '{:02d}'.format(i + 1)] = [i[0] for i in words]
         return word_dict
 
-
     topics = 15
     words = 20
 
@@ -177,6 +187,6 @@ if __name__ == '__main__':
     pickle_lda.close()
 
     doLDAVis = False
-    if doLDAVis==True:
+    if doLDAVis == True:
         lda_vis = gensimvis.prepare(lda_model, bow_corpus, dictionary)
         pyLDAvis.display(lda_vis)
