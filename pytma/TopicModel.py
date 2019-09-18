@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import pyLDAvis
 from gensim.models.coherencemodel import CoherenceModel
 from gensim.models.ldamodel import LdaModel
 from gensim.corpora.dictionary import Dictionary
+from gensim.models import Phrases
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize import RegexpTokenizer
 import matplotlib.pyplot as plt
@@ -11,10 +12,10 @@ import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
 from numpy import array
-
 from pytma.DataSources import get_transcription_data
 from pytma.Utility import log
-
+import pyLDAvis
+import pyLDAvis.gensim as gensimvis
 
 class LDAAnalysis:
     def __init__(self, docs, num_topics=5, chunksize=500, passes=20, iterations=400, eval_every=1):
@@ -50,11 +51,10 @@ class LDAAnalysis:
         lemmatizer = WordNetLemmatizer()
         self.docs = [[lemmatizer.lemmatize(token) for token in doc] for doc in self.docs]
 
-    def fit(self):
+    def fit(self,dictionary_filter_extremes_no_below=10, dictionary_filter_extremes_no_above=0.2):
         # Perform function on our document
         self.docs_preprocessor()
-        # Create Biagram & Trigram Models
-        from gensim.models import Phrases
+        # Create Bigram & Trigram Models
 
         # Add bigrams and trigrams to docs,minimum count 10 means only that appear 10 times or more.
         bigram = Phrases(self.docs, min_count=10)
@@ -72,7 +72,7 @@ class LDAAnalysis:
         # Remove rare & common tokens
         # Create a dictionary representation of the documents.
         self.dictionary = Dictionary(self.docs)
-        self.dictionary.filter_extremes(no_below=10, no_above=0.2)
+        self.dictionary.filter_extremes(no_below=dictionary_filter_extremes_no_below, no_above=dictionary_filter_extremes_no_above)
         # Create dictionary and corpus required for Topic Modeling
         self.corpus = [self.dictionary.doc2bow(doc) for doc in self.docs]
         log.info('Number of unique tokens: %d' % len(self.dictionary))
@@ -158,6 +158,7 @@ class LDAAnalysis:
 
 
 class NNMFTopicAnalysis:
+
     def __init__(self, docs, num_samples=400, num_features=1000, num_topics=10, top_words=20):
         self.samples = num_samples
         self.num_features = num_features
@@ -183,8 +184,10 @@ if __name__ == '__main__':
     # This will be the unit test
 
     medical_df = get_transcription_data()
-
-    docs = array(medical_df['transcription'])
+    print(type(medical_df))
+    text = medical_df['transcription']
+    print(type(text))
+    docs = array(text)
     print(type(docs))
     # =============================
     # LDA
@@ -202,7 +205,14 @@ if __name__ == '__main__':
 
     lda.coherence_values()
 
+
+    lda_vis = gensimvis.prepare(lda, lda.corpus, lda.dictionary)
+    pyLDAvis.display(lda_vis)
+
     # =============================
     # NNMF
     nnmf = NNMFTopicAnalysis(docs=docs)
     nnmf.fit()
+
+    print('Done')
+    

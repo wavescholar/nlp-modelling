@@ -107,16 +107,5 @@ class Tokenizer:
         plt.show()
 
 if __name__ == '__main__':
-
-    # This will be the unit test
-
-    test_text = """Hello Mr. Smith, how are you doing today? The weather is great, and city is awesome.
-    The sky is pinkish-blue. You shouldn't eat cardboard"""
-
-    text = Tokenizer.regexTokenize(test_text)
-
-    t = Tokenizer(test_text)
-    log.info(t.to_words())
-    log.info(t.to_sentences())
-    log.info(t.freqs())
-    t.plot_freqs()
+    from pytma.tests.test_Tokenizer import TestTokenizer
+    TestTokenizer.test_tokenizer()

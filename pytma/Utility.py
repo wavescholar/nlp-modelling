@@ -61,6 +61,12 @@ class Logger:
         """
         Set the global log level
         logging.****
+        DEBUG :Detailed information, typically of interest only when diagnosing problems.
+        INFO: Confirmation that things are working as expected.
+        WARNING: An indication that something unexpected happened, or indicative of some problem in the near future (e.g. ‘disk space low’). The software is still working as expected.
+        ERROR:Due to a more serious problem, the software has not been able to perform some function.
+        CRITICAL:A serious error, indicating that the program itself may be unable to continue running.
+
         :param level:
         CRITICAL = 50
         ERROR = 40
@@ -69,7 +75,7 @@ class Logger:
         DEBUG = 10
         NOTSET = 0
 
-:return:
+        :return:
         """
 
     # DEBUG :Detailed information, typically of interest only when diagnosing problems.
@@ -99,14 +105,7 @@ Global Logger for pytma
 log = Logger('.', "pytma")
 
 if __name__ == '__main__':
-    log = Logger('.', "pytma")
 
-    log.info("information")
+    from pytma.tests.test_util import TestUtil
 
-    log.debug("debugging info")
-
-    log.warning("warning")
-
-    log.error("error")
-
-    log.critical("critical message")
+    TestUtil.test_util()

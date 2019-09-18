@@ -3,20 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/DataSources.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/DataSources.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Featurize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Featurize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Lemmatize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Lemmatize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Parse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Preprocess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Sentiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Sentiment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/StopWord.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/StopWord.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Tokenizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Tokenizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytma/TopicModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/TopicModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Utility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/tests/test_Lemmatize.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/tests/test_Lemmatize.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/LDAWorkflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/LDAWorkflow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/PredictionExample.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/PredictionExample.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,19 +50,44 @@
         <item name="postgres: database" type="162271b6:PgImplModel$Database" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
+        <item name="access methods" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
     </expand>
     <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="nlp-modelling" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Unit Test" />
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1OVVI8TeyVTbKB0d190FK9trOef" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -86,7 +99,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pytma/Parse.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pytma/TopicModel.py" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -110,7 +123,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_Lemmatize.py">
+  <component name="RunManager" selected="Python.TopicModel">
+    <configuration name="LDAWorkflow" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/LDAWorkflow.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="POSTag" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="topic-modelling" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -221,6 +256,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="TopicModel" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytma/TopicModel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="topic-modelling" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -281,6 +338,22 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in test_LDA.py" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma/tests/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/pytma/tests/test_LDA.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest in test_Lemmatize.py" type="tests" factoryName="py.test" nameIsGenerated="true">
       <module name="topic-modelling" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -294,6 +367,22 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/pytma/tests/test_Lemmatize.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_POSTag.py" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma/tests/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/pytma/tests/test_POSTag.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -329,6 +418,22 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in test_Tokenizer.py" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="topic-modelling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/snowflakes/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pytma/tests/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/pytma/tests/test_Tokenizer.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest_gensim" type="tests" factoryName="py.test">
       <module name="topic-modelling" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -346,11 +451,16 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.LDAWorkflow" />
+      <item itemvalue="Python.TopicModel" />
       <item itemvalue="Python.Parse" />
       <item itemvalue="Python.Sentiment" />
       <item itemvalue="Python.POSTag" />
       <item itemvalue="Python.PredictionExample" />
       <item itemvalue="Python.pytma.topicmodel" />
+      <item itemvalue="Python tests.pytest in test_Tokenizer.py" />
+      <item itemvalue="Python tests.pytest in test_LDA.py" />
+      <item itemvalue="Python tests.pytest in test_POSTag.py" />
       <item itemvalue="Python tests.pytest in test_Sentiment.py" />
       <item itemvalue="Python tests.pytest in test_Parse.py" />
       <item itemvalue="Python tests.pytest in test_Lemmatize.py" />
@@ -362,16 +472,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3af4ebaf" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@464f4218" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -420,8 +521,48 @@
       <workItem from="1567464037234" duration="2175000" />
       <workItem from="1567784779090" duration="12786000" />
       <workItem from="1567898020385" duration="6594000" />
-      <workItem from="1567960550432" duration="7361000" />
+      <workItem from="1567960550432" duration="8112000" />
+      <workItem from="1567982420103" duration="5039000" />
+      <workItem from="1568069936216" duration="4715000" />
+      <workItem from="1568310396308" duration="1036000" />
+      <workItem from="1568567257664" duration="14323000" />
     </task>
+    <task id="LOCAL-00001" summary="dev">
+      <created>1568567543522</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568567543522</updated>
+    </task>
+    <task id="LOCAL-00002" summary="dev">
+      <created>1568569207662</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568569207662</updated>
+    </task>
+    <task id="LOCAL-00003" summary="dev">
+      <created>1568569461059</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568569461059</updated>
+    </task>
+    <task id="LOCAL-00004" summary="dev">
+      <created>1568569710472</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568569710472</updated>
+    </task>
+    <task id="LOCAL-00005" summary="GH-16 &#10;bcambell&#10;091519&#10;Paralellize pre-processing and other loops iterating over tokenized chunks #16&#10;Opened in aloidia-solutions/nlp-modelling">
+      <created>1568592003420</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1568592003420</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,23 +581,18 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dev" />
+    <MESSAGE value="GH-16 &#10;bcambell&#10;091519&#10;Paralellize pre-processing and other loops iterating over tokenized chunks #16&#10;Opened in aloidia-solutions/nlp-modelling" />
+    <option name="LAST_COMMIT_MESSAGE" value="GH-16 &#10;bcambell&#10;091519&#10;Paralellize pre-processing and other loops iterating over tokenized chunks #16&#10;Opened in aloidia-solutions/nlp-modelling" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>172</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/doc/sphinxext/github.py</url>
           <line>148</line>
           <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pytma/Tokenizer.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/Tokenizer.py</url>
@@ -479,11 +615,6 @@
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>89</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/DataSources.py</url>
           <line>97</line>
           <option name="timeStamp" value="72" />
@@ -495,7 +626,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/tests/test_DataSources.py</url>
-          <line>16</line>
+          <line>19</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -505,7 +636,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/tests/test_DataSources.py</url>
-          <line>21</line>
+          <line>24</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -534,18 +665,13 @@
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pytma/Tokenizer.py</url>
-          <line>117</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
-          <line>190</line>
+          <line>193</line>
           <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/PredictionExample.py</url>
-          <line>193</line>
+          <line>200</line>
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -555,13 +681,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/CTMModel.py</url>
-          <line>418</line>
+          <line>416</line>
           <option name="timeStamp" value="145" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
-          <line>73</line>
-          <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/PredictionExample.py</url>
@@ -570,7 +691,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/CTMModel.py</url>
-          <line>416</line>
+          <line>414</line>
           <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -580,7 +701,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/CTMModel.py</url>
-          <line>382</line>
+          <line>380</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -609,11 +730,6 @@
           <option name="timeStamp" value="161" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pytma/POSTag.py</url>
-          <line>50</line>
-          <option name="timeStamp" value="164" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/tests/test_Sentiment.py</url>
           <line>44</line>
           <option name="timeStamp" value="167" />
@@ -633,23 +749,51 @@
           <line>73</line>
           <option name="timeStamp" value="180" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
+          <line>169</line>
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda3/envs/snowflakes/lib/python3.6/site-packages/sklearn/feature_extraction/text.py</url>
+          <line>1650</line>
+          <option name="timeStamp" value="195" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
+          <line>216</line>
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/tests/test_LDA.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="197" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pytma/tests/test_LDA.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="198" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
+          <line>172</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
       </breakpoints>
-      <default-breakpoints>
-        <breakpoint type="python-exception">
-          <properties notifyOnTerminate="true" exception="BaseException">
-            <option name="notifyOnTerminate" value="true" />
-          </properties>
-        </breakpoint>
-      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/nlp_modelling$POSTag.coverage" NAME="POSTag Coverage Results" MODIFIED="1567902426798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
     <SUITE FILE_PATH="coverage/nlp_modelling$Sentiment.coverage" NAME="Sentiment Coverage Results" MODIFIED="1567961568378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Sentiment_py.coverage" NAME="pytest in test_Sentiment.py Coverage Results" MODIFIED="1567961872837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Lemmatize_py.coverage" NAME="pytest in test_Lemmatize.py Coverage Results" MODIFIED="1567966997542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1566866308529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests" />
-    <SUITE FILE_PATH="coverage/nlp_modelling$pytma_topicmodel.coverage" NAME="pytma.topicmodel Coverage Results" MODIFIED="1567901553943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$LDAWorkflow.coverage" NAME="LDAWorkflow Coverage Results" MODIFIED="1568679495089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_LDA_py.coverage" NAME="pytest in test_LDA.py Coverage Results" MODIFIED="1568074016397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_POSTag_py.coverage" NAME="pytest in test_POSTag.py Coverage Results" MODIFIED="1567983340080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$POSTag.coverage" NAME="POSTag Coverage Results" MODIFIED="1567902426798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Tokenizer_py.coverage" NAME="pytest in test_Tokenizer.py Coverage Results" MODIFIED="1568070511109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$pytma_topicmodel.coverage" NAME="pytma.topicmodel Coverage Results" MODIFIED="1568072852498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$TopicModel.coverage" NAME="TopicModel Coverage Results" MODIFIED="1568587783345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Parse_py.coverage" NAME="pytest in test_Parse.py Coverage Results" MODIFIED="1567964490084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
     <SUITE FILE_PATH="coverage/topic_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1563843963292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/nlp_modelling$Parse.coverage" NAME="Parse Coverage Results" MODIFIED="1567964341208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
