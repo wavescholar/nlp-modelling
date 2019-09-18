@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import pyLDAvis
 from gensim.models.coherencemodel import CoherenceModel
 from gensim.models.ldamodel import LdaModel
 from gensim.corpora.dictionary import Dictionary
@@ -14,6 +14,8 @@ from sklearn.decomposition import NMF
 from numpy import array
 from pytma.DataSources import get_transcription_data
 from pytma.Utility import log
+import pyLDAvis
+import pyLDAvis.gensim as gensimvis
 
 class LDAAnalysis:
     def __init__(self, docs, num_topics=5, chunksize=500, passes=20, iterations=400, eval_every=1):
@@ -203,9 +205,14 @@ if __name__ == '__main__':
 
     lda.coherence_values()
 
+
+    lda_vis = gensimvis.prepare(lda, lda.corpus, lda.dictionary)
+    pyLDAvis.display(lda_vis)
+
     # =============================
     # NNMF
     nnmf = NNMFTopicAnalysis(docs=docs)
     nnmf.fit()
 
     print('Done')
+    

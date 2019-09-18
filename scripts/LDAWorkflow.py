@@ -107,19 +107,12 @@ if __name__ == '__main__':
         with open(pickle_filename, 'rb') as pickle_file:
             processed = pickle.load(pickle_file)
 
-    dictionary = gensim.corpora.Dictionary(np.array(processed))
-    print(type(dictionary))
+    dictionary = gensim.corpora.Dictionary([d[0].split() for d in processed.values.tolist()])
 
-    count = 0
-    for k, v in dictionary.iteritems():
-        print(k, v)
-        count += 1
-        if count > 10:
-            break
     dictionary.filter_extremes(no_below=15, no_above=0.5, keep_n=100000)
 
     # Bag of Words & TF-IDF model
-    bow_corpus = [dictionary.doc2bow(doc) for doc in processed]
+    bow_corpus = [dictionary.doc2bow(doc.split() ) for doc in processed['lemmatized']]
 
     md_tfidf = gensim.models.TfidfModel(bow_corpus)
     # Transform the whole corpus via TfIdf and index it, in preparation for similarity queries:
@@ -129,8 +122,8 @@ if __name__ == '__main__':
 
     # observe the overall distribution of the lexicons over the documents
     dict_bow = {}
-    for doc in bow_corpus:  # access list of bow
-        for count in doc:  # access tuple
+    for doc in bow_corpus:
+        for count in doc:
             if count[0] not in dict_bow:
                 dict_bow[dictionary[count[0]]] = count[1]
             else:
@@ -138,10 +131,7 @@ if __name__ == '__main__':
     y_min = min(dict_bow, key=dict_bow.get)
     y_max = max(dict_bow, key=dict_bow.get)
 
-    # sorted(dict1, key=dict1.get)
     dict_bow = sorted(dict_bow.items(), key=lambda x: x[1])
-    print(dict_bow[0:50])
-    print(dict_bow[(len(dict_bow) - 50):len(dict_bow)])
 
     count_lower = pd.DataFrame(dict_bow[0:50], columns=['word', 'frequency'])
     count_higher = pd.DataFrame(dict_bow[(len(dict_bow) - 50):len(dict_bow)], columns=['word', 'frequency'])
@@ -180,13 +170,7 @@ if __name__ == '__main__':
         # Print the first 10 most representative topics
         print("Topic #%s:" % idx, lsi_model.print_topic(idx, 10))
 
-    print("=" * 20)
+    lda_vis = gensimvis.prepare(lda_model, bow_corpus, dictionary)
+    pyLDAvis.display(lda_vis)
 
-    pickle_lda = open("../../pytma/data/cache/lda_model_15.pkl", "wb")
-    pickle.dump(lda_model, pickle_lda)
-    pickle_lda.close()
-
-    doLDAVis = False
-    if doLDAVis == True:
-        lda_vis = gensimvis.prepare(lda_model, bow_corpus, dictionary)
-        pyLDAvis.display(lda_vis)
+    print("Done")

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="467c207e-4099-49ab-b5a8-d14cbf7eb37b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytma/Utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/Utility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytma/TopicModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytma/TopicModel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/LDAWorkflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/LDAWorkflow.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -123,7 +123,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.LDAWorkflow">
+  <component name="RunManager" selected="Python.TopicModel">
     <configuration name="LDAWorkflow" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="topic-modelling" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -525,7 +525,7 @@
       <workItem from="1567982420103" duration="5039000" />
       <workItem from="1568069936216" duration="4715000" />
       <workItem from="1568310396308" duration="1036000" />
-      <workItem from="1568567257664" duration="6983000" />
+      <workItem from="1568567257664" duration="14323000" />
     </task>
     <task id="LOCAL-00001" summary="dev">
       <created>1568567543522</created>
@@ -555,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568569710472</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="GH-16 &#10;bcambell&#10;091519&#10;Paralellize pre-processing and other loops iterating over tokenized chunks #16&#10;Opened in aloidia-solutions/nlp-modelling">
+      <created>1568592003420</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1568592003420</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,16 +583,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dev" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev" />
+    <MESSAGE value="GH-16 &#10;bcambell&#10;091519&#10;Paralellize pre-processing and other loops iterating over tokenized chunks #16&#10;Opened in aloidia-solutions/nlp-modelling" />
+    <option name="LAST_COMMIT_MESSAGE" value="GH-16 &#10;bcambell&#10;091519&#10;Paralellize pre-processing and other loops iterating over tokenized chunks #16&#10;Opened in aloidia-solutions/nlp-modelling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>191</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/doc/sphinxext/github.py</url>
           <line>148</line>
@@ -610,11 +613,6 @@
           <url>file://$PROJECT_DIR$/pytma/StopWord.py</url>
           <line>74</line>
           <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>109</line>
-          <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/DataSources.py</url>
@@ -668,7 +666,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
-          <line>191</line>
+          <line>193</line>
           <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -753,7 +751,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
-          <line>167</line>
+          <line>169</line>
           <option name="timeStamp" value="194" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -763,7 +761,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pytma/TopicModel.py</url>
-          <line>210</line>
+          <line>216</line>
           <option name="timeStamp" value="196" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -778,28 +776,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>102</line>
-          <option name="timeStamp" value="204" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>188</line>
-          <option name="timeStamp" value="205" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>110</line>
-          <option name="timeStamp" value="206" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="207" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/LDAWorkflow.py</url>
-          <line>100</line>
-          <option name="timeStamp" value="216" />
+          <line>172</line>
+          <option name="timeStamp" value="224" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -809,7 +787,7 @@
     <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Sentiment_py.coverage" NAME="pytest in test_Sentiment.py Coverage Results" MODIFIED="1567961872837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_Lemmatize_py.coverage" NAME="pytest in test_Lemmatize.py Coverage Results" MODIFIED="1567966997542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytma.coverage" NAME="pytma Coverage Results" MODIFIED="1566866308529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests" />
-    <SUITE FILE_PATH="coverage/nlp_modelling$LDAWorkflow.coverage" NAME="LDAWorkflow Coverage Results" MODIFIED="1568591911974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/nlp_modelling$LDAWorkflow.coverage" NAME="LDAWorkflow Coverage Results" MODIFIED="1568679495089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_LDA_py.coverage" NAME="pytest in test_LDA.py Coverage Results" MODIFIED="1568074016397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
     <SUITE FILE_PATH="coverage/nlp_modelling$pytest_in_test_POSTag_py.coverage" NAME="pytest in test_POSTag.py Coverage Results" MODIFIED="1567983340080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma/tests/" />
     <SUITE FILE_PATH="coverage/nlp_modelling$POSTag.coverage" NAME="POSTag Coverage Results" MODIFIED="1567902426798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytma" />
